@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnvo6wkih45vg"]
+[gd_scene load_steps=8 format=3 uid="uid://bnvo6wkih45vg"]
+
+[ext_resource type="Script" uid="uid://bpeekdl03wgcd" path="res://MainMenu/LevelsButton.gd" id="1_otibh"]
 
 [sub_resource type="Gradient" id="Gradient_mlc1t"]
 colors = PackedColorArray(0.380392, 0.670588, 0.713726, 1, 0.380392, 0.670588, 0.713726, 1)
@@ -8,6 +10,15 @@ gradient = SubResource("Gradient_mlc1t")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlc1t"]
 font_size = 60
+
+[sub_resource type="Gradient" id="Gradient_otibh"]
+colors = PackedColorArray(0.559523, 8.90419e-07, 3.36915e-07, 1, 0.560784, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cruaa"]
+gradient = SubResource("Gradient_otibh")
+
+[sub_resource type="LabelSettings" id="LabelSettings_otibh"]
+font_size = 45
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -31,3 +42,70 @@ offset_right = 797.0
 offset_bottom = 175.0
 text = "Shaterred Soul"
 label_settings = SubResource("LabelSettings_mlc1t")
+
+[node name="Levels" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 261.0
+offset_right = 679.0
+offset_bottom = 325.0
+texture = SubResource("GradientTexture2D_cruaa")
+
+[node name="LevelsButton" type="TextureButton" parent="Levels"]
+layout_mode = 0
+offset_right = 209.0
+offset_bottom = 63.0
+script = ExtResource("1_otibh")
+
+[node name="LevelsText" type="Label" parent="Levels/LevelsButton"]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 65.0
+text = "Levels"
+label_settings = SubResource("LabelSettings_otibh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureRect" parent="."]
+offset_left = 472.0
+offset_top = 375.0
+offset_right = 680.0
+offset_bottom = 439.0
+texture = SubResource("GradientTexture2D_cruaa")
+
+[node name="SettingsButton" type="TextureButton" parent="Settings"]
+layout_mode = 0
+offset_right = 209.0
+offset_bottom = 63.0
+script = ExtResource("1_otibh")
+
+[node name="SettingsText" type="Label" parent="Settings/SettingsButton"]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 65.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_otibh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureRect" parent="."]
+offset_left = 471.0
+offset_top = 500.0
+offset_right = 679.0
+offset_bottom = 564.0
+texture = SubResource("GradientTexture2D_cruaa")
+
+[node name="QuitButton" type="TextureButton" parent="Quit"]
+layout_mode = 0
+offset_right = 209.0
+offset_bottom = 63.0
+script = ExtResource("1_otibh")
+
+[node name="QuitText" type="Label" parent="Quit/QuitButton"]
+layout_mode = 0
+offset_right = 208.0
+offset_bottom = 65.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_otibh")
+horizontal_alignment = 1
+vertical_alignment = 1
