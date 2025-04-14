@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnvo6wkih45vg"]
+
+[sub_resource type="Gradient" id="Gradient_mlc1t"]
+colors = PackedColorArray(0.380392, 0.670588, 0.713726, 1, 0.380392, 0.670588, 0.713726, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_otibh"]
+gradient = SubResource("Gradient_mlc1t")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mlc1t"]
+font_size = 60
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 647.0
+texture = SubResource("GradientTexture2D_otibh")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 92.0
+offset_right = 797.0
+offset_bottom = 175.0
+text = "Shaterred Soul"
+label_settings = SubResource("LabelSettings_mlc1t")
