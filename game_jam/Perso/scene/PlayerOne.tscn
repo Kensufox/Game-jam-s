@@ -15,15 +15,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrpx0"]
-size = Vector2(127.5, 127)
+size = Vector2(30, 30)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_y8hmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(64, 64)
+position = Vector2(16, 16)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_kvvwy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 64)
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_xrpx0")

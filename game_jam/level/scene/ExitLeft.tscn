@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://hu2e46xudn85"]
+[gd_scene load_steps=5 format=3 uid="uid://umf6q46ffc8d"]
 
-[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://level/scripts/area_a.gd" id="1_vg28a"]
+[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://Level/scripts/area_a.gd" id="1_gerur"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3acr"]
-size = Vector2(192.5, 126.5)
+size = Vector2(32, 32)
 
 [sub_resource type="Gradient" id="Gradient_rcho0"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ojajh"]
 gradient = SubResource("Gradient_rcho0")
@@ -13,17 +14,18 @@ gradient = SubResource("Gradient_rcho0")
 [node name="ExitLeft" type="Node2D"]
 
 [node name="AreaA" type="Area2D" parent="."]
-position = Vector2(608, -72)
-script = ExtResource("1_vg28a")
+collision_mask = 2
+script = ExtResource("1_gerur")
 
 [node name="LeftExit" type="CollisionShape2D" parent="AreaA"]
-position = Vector2(-512.25, 136.75)
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_p3acr")
 
 [node name="Sprite2D" type="Sprite2D" parent="AreaA"]
-position = Vector2(-511.25, 136)
-scale = Vector2(2.97656, 2)
+position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_ojajh")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [connection signal="body_entered" from="AreaA" to="AreaA" method="_on_body_entered"]
 [connection signal="body_exited" from="AreaA" to="AreaA" method="_on_body_exited"]
