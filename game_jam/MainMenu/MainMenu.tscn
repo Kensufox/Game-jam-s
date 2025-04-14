@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnvo6wkih45vg"]
+[gd_scene load_steps=9 format=3 uid="uid://bnvo6wkih45vg"]
 
 [ext_resource type="Script" uid="uid://bpeekdl03wgcd" path="res://MainMenu/LevelsButton.gd" id="1_otibh"]
+[ext_resource type="Script" uid="uid://1qx8qa75io66" path="res://MainMenu/QuitButton.gd" id="2_cruaa"]
 
 [sub_resource type="Gradient" id="Gradient_mlc1t"]
 colors = PackedColorArray(0.380392, 0.670588, 0.713726, 1, 0.380392, 0.670588, 0.713726, 1)
@@ -64,7 +65,7 @@ offset_bottom = 65.0
 text = "Levels"
 label_settings = SubResource("LabelSettings_otibh")
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 3
 
 [node name="Settings" type="TextureRect" parent="."]
 layout_mode = 0
@@ -78,7 +79,6 @@ texture = SubResource("GradientTexture2D_cruaa")
 layout_mode = 0
 offset_right = 209.0
 offset_bottom = 63.0
-script = ExtResource("1_otibh")
 
 [node name="SettingsText" type="Label" parent="Settings/SettingsButton"]
 layout_mode = 0
@@ -87,7 +87,7 @@ offset_bottom = 65.0
 text = "Settings"
 label_settings = SubResource("LabelSettings_otibh")
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 3
 
 [node name="Quit" type="TextureRect" parent="."]
 layout_mode = 0
@@ -101,7 +101,7 @@ texture = SubResource("GradientTexture2D_cruaa")
 layout_mode = 0
 offset_right = 209.0
 offset_bottom = 63.0
-script = ExtResource("1_otibh")
+script = ExtResource("2_cruaa")
 
 [node name="QuitText" type="Label" parent="Quit/QuitButton"]
 layout_mode = 0
@@ -110,4 +110,4 @@ offset_bottom = 65.0
 text = "Quit"
 label_settings = SubResource("LabelSettings_otibh")
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 3
