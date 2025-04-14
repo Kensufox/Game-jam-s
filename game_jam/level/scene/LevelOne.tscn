@@ -1,15 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=14 format=3 uid="uid://ds7i3i4g45813"]
 
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="1_1n1mg"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="1_61sn5"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="1_1n1mg"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_61sn5"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_5m3tn"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://level/scene/restartZone.tscn" id="3_5m3tn"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_5m3tn"]
 [ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="5_rxcfj"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m3tn"]
-size = Vector2(64, 1288)
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
 
@@ -30,22 +27,22 @@ gradient = SubResource("Gradient_fgvsu")
 
 [node name="LevelOne" type="Node2D"]
 
-[node name="LimitPlayer" type="StaticBody2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(574, 314)
+zoom = Vector2(1.5, 1.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitPlayer"]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_5m3tn")
+[node name="Slit" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="LimitPlayer"]
-position = Vector2(0, 0.000106812)
-scale = Vector2(1, 20.25)
+[node name="Sprite2D" type="Sprite2D" parent="Slit"]
+position = Vector2(576, 314)
 texture = SubResource("GradientTexture2D_m7pgx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 512)
 
 [node name="Left" type="Node" parent="."]
 
 [node name="LeftArea" type="Node2D" parent="Left"]
-position = Vector2(239, 205)
+position = Vector2(256, 192)
 
 [node name="Background" type="Sprite2D" parent="Left/LeftArea"]
 position = Vector2(128, 112)
@@ -54,7 +51,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_fksmy")]
-position = Vector2(112, 192)
+position = Vector2(96, 192)
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("1_1n1mg")]
 position = Vector2(112, 0)
@@ -107,7 +104,7 @@ scale = Vector2(8, 1)
 [node name="Right" type="Node" parent="."]
 
 [node name="LeftArea" type="Node2D" parent="Right"]
-position = Vector2(650, 204)
+position = Vector2(640, 192)
 
 [node name="Background" type="Sprite2D" parent="Right/LeftArea"]
 position = Vector2(128, 112)
@@ -116,7 +113,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
 [node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
-position = Vector2(112, 192)
+position = Vector2(128, 192)
 
 [node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
 position = Vector2(112, 0)
@@ -157,7 +154,3 @@ scale = Vector2(8, 1)
 [node name="Down" parent="Right/LeftArea/Wall" instance=ExtResource("5_rxcfj")]
 position = Vector2(0, 224)
 scale = Vector2(8, 1)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 314)
-zoom = Vector2(1.5, 1.5)
