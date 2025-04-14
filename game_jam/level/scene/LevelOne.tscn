@@ -36,10 +36,10 @@ gradient = SubResource("Gradient_m7pgx")
 position = Vector2(2, 0)
 
 [node name="ExitRight" parent="." instance=ExtResource("1_61sn5")]
-position = Vector2(1022, 1024)
+position = Vector2(1278, 16)
 
 [node name="ExitLeft" parent="." instance=ExtResource("1_1n1mg")]
-position = Vector2(126, 848)
+position = Vector2(318, 16)
 
 [node name="Player1" parent="." instance=ExtResource("1_fksmy")]
 position = Vector2(382, 1152)

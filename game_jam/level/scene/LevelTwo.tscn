@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://d4h0rpix5a4ie"]
+[gd_scene load_steps=28 format=3 uid="uid://d4h0rpix5a4ie"]
 
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_3yu3w"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_14asd"]
 [ext_resource type="PackedScene" uid="uid://wp82wory420v" path="res://level/scene/ExitRight.tscn" id="3_bqgpp"]
 [ext_resource type="PackedScene" uid="uid://hu2e46xudn85" path="res://level/scene/ExitLeft.tscn" id="4_3lrts"]
+[ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://level/scripts/RestartZone.gd" id="5_3lrts"]
+[ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://level/scripts/PressurePlate.gd" id="6_hkhlw"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bqgpp"]
 a = Vector2(-928, 0)
@@ -45,13 +47,36 @@ size = Vector2(128, 128)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bqgpp"]
 gradient = SubResource("Gradient_14asd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3lrts"]
+size = Vector2(512, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkhlw"]
+size = Vector2(128, 264)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ls5l"]
+size = Vector2(224, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx0ni"]
+size = Vector2(224, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kkn1"]
+size = Vector2(192, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1pw6"]
+size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_hkhlw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wl0ig"]
+gradient = SubResource("Gradient_hkhlw")
+
 [node name="LevelTwo" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_3yu3w")]
-position = Vector2(512, 896)
+position = Vector2(256, 528)
 
 [node name="Player2" parent="." instance=ExtResource("2_14asd")]
-position = Vector2(1728, 896)
+position = Vector2(1472, 648)
 
 [node name="Haut" type="StaticBody2D" parent="."]
 position = Vector2(926, 0)
@@ -154,7 +179,83 @@ scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_bqgpp")
 
 [node name="ExitRight" parent="." instance=ExtResource("3_bqgpp")]
-position = Vector2(1376, 616)
+position = Vector2(1632, 0)
 
 [node name="ExitLeft" parent="." instance=ExtResource("4_3lrts")]
-position = Vector2(448, 464)
+position = Vector2(480, 0)
+
+[node name="HitBox Water" type="Area2D" parent="."]
+position = Vector2(1024, 600)
+script = ExtResource("5_3lrts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox Water"]
+position = Vector2(-128, -20)
+shape = SubResource("RectangleShape2D_3lrts")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox Water"]
+position = Vector2(-320, -212)
+shape = SubResource("RectangleShape2D_hkhlw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HitBox Water"]
+position = Vector2(-496, -280)
+shape = SubResource("RectangleShape2D_4ls5l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HitBox Water"]
+position = Vector2(-912, -280)
+shape = SubResource("RectangleShape2D_vx0ni")
+
+[node name="Bridge" type="CollisionShape2D" parent="HitBox Water"]
+position = Vector2(-704, -280)
+shape = SubResource("RectangleShape2D_5kkn1")
+
+[node name="HitBox Lava" type="Area2D" parent="."]
+position = Vector2(2240, 600)
+script = ExtResource("5_3lrts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox Lava"]
+position = Vector2(-128, -20)
+shape = SubResource("RectangleShape2D_3lrts")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox Lava"]
+position = Vector2(-320, -212)
+shape = SubResource("RectangleShape2D_hkhlw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HitBox Lava"]
+position = Vector2(-496, -280)
+shape = SubResource("RectangleShape2D_4ls5l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HitBox Lava"]
+position = Vector2(-912, -280)
+shape = SubResource("RectangleShape2D_vx0ni")
+
+[node name="Bridge" type="CollisionShape2D" parent="HitBox Lava"]
+position = Vector2(-704, -280)
+shape = SubResource("RectangleShape2D_5kkn1")
+
+[node name="Pressure plate" type="Area2D" parent="."]
+position = Vector2(864, 752)
+script = ExtResource("6_hkhlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plate"]
+position = Vector2(32, 16)
+shape = SubResource("RectangleShape2D_n1pw6")
+
+[node name="Pressure plate lava" type="Area2D" parent="."]
+position = Vector2(1512, 440)
+script = ExtResource("6_hkhlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plate lava"]
+position = Vector2(32, 16)
+shape = SubResource("RectangleShape2D_n1pw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pressure plate lava"]
+position = Vector2(32, 16)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_wl0ig")
+
+[connection signal="body_entered" from="HitBox Water" to="HitBox Water" method="_on_body_entered"]
+[connection signal="body_entered" from="HitBox Lava" to="HitBox Lava" method="_on_body_entered"]
+[connection signal="body_entered" from="Pressure plate" to="Pressure plate" method="_on_body_entered"]
+[connection signal="body_exited" from="Pressure plate" to="Pressure plate" method="_on_body_exited"]
+[connection signal="body_entered" from="Pressure plate lava" to="Pressure plate lava" method="_on_body_entered"]
+[connection signal="body_exited" from="Pressure plate lava" to="Pressure plate lava" method="_on_body_exited"]

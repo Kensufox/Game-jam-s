@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://level/scripts/area_a.gd" id="1_vg28a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3acr"]
-size = Vector2(258.5, 189)
+size = Vector2(192.5, 126.5)
 
 [sub_resource type="Gradient" id="Gradient_rcho0"]
 
@@ -17,12 +17,12 @@ position = Vector2(608, -72)
 script = ExtResource("1_vg28a")
 
 [node name="LeftExit" type="CollisionShape2D" parent="AreaA"]
-position = Vector2(-479.25, 168)
+position = Vector2(-512.25, 136.75)
 shape = SubResource("RectangleShape2D_p3acr")
 
-[node name="Sprite2D" type="Sprite2D" parent="AreaA/LeftExit"]
-position = Vector2(1.25001, 0)
-scale = Vector2(4.01563, 3)
+[node name="Sprite2D" type="Sprite2D" parent="AreaA"]
+position = Vector2(-511.25, 136)
+scale = Vector2(2.97656, 2)
 texture = SubResource("GradientTexture2D_ojajh")
 
 [connection signal="body_entered" from="AreaA" to="AreaA" method="_on_body_entered"]
