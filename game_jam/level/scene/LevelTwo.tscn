@@ -1,11 +1,11 @@
 [gd_scene load_steps=28 format=3 uid="uid://d4h0rpix5a4ie"]
 
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_3yu3w"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_14asd"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="3_bqgpp"]
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="4_3lrts"]
-[ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://level/scripts/RestartZone.gd" id="5_3lrts"]
-[ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://level/scripts/PressurePlate.gd" id="6_hkhlw"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_3yu3w"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_14asd"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="3_bqgpp"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="4_3lrts"]
+[ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://Level/scripts/RestartZone.gd" id="5_3lrts"]
+[ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://Level/scripts/PressurePlate.gd" id="6_hkhlw"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_bqgpp"]
 a = Vector2(-928, 0)
@@ -72,10 +72,10 @@ gradient = SubResource("Gradient_hkhlw")
 
 [node name="LevelTwo" type="Node2D"]
 
-[node name="Player1" parent="." instance=ExtResource("1_3yu3w")]
+[node name="LeftPlayer" parent="." instance=ExtResource("1_3yu3w")]
 position = Vector2(512, 896)
 
-[node name="Player2" parent="." instance=ExtResource("2_14asd")]
+[node name="RightPlayer" parent="." instance=ExtResource("2_14asd")]
 position = Vector2(1664, 896)
 
 [node name="Haut" type="StaticBody2D" parent="."]
@@ -186,6 +186,7 @@ position = Vector2(480, 0)
 
 [node name="HitBox Water" type="Area2D" parent="."]
 position = Vector2(1024, 600)
+collision_mask = 2
 script = ExtResource("5_3lrts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox Water"]
@@ -210,6 +211,7 @@ shape = SubResource("RectangleShape2D_5kkn1")
 
 [node name="HitBox Lava" type="Area2D" parent="."]
 position = Vector2(2240, 600)
+collision_mask = 2
 script = ExtResource("5_3lrts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox Lava"]
