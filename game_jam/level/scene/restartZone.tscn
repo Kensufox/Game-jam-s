@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxxybg2twl0hw"]
+
+[ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://level/scripts/RestartZone.gd" id="1_jhmu2"]
+
+[sub_resource type="Gradient" id="Gradient_jhmu2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wcm14"]
+gradient = SubResource("Gradient_jhmu2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcm14"]
+size = Vector2(448, 256)
+
+[node name="RestartZone" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(32, 16)
+script = ExtResource("1_jhmu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(64, 80)
+scale = Vector2(3, 3)
+texture = SubResource("GradientTexture2D_wcm14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(192, 112)
+shape = SubResource("RectangleShape2D_wcm14")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
