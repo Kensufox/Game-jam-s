@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://hu2e46xudn85"]
+
+[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://level/scripts/area_a.gd" id="1_vg28a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3acr"]
+size = Vector2(258.5, 189)
+
+[sub_resource type="Gradient" id="Gradient_rcho0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ojajh"]
+gradient = SubResource("Gradient_rcho0")
+
+[node name="ExitLeft" type="Node2D"]
+
+[node name="AreaA" type="Area2D" parent="."]
+position = Vector2(608, -72)
+script = ExtResource("1_vg28a")
+
+[node name="LeftExit" type="CollisionShape2D" parent="AreaA"]
+position = Vector2(-479.25, 168)
+shape = SubResource("RectangleShape2D_p3acr")
+
+[node name="Sprite2D" type="Sprite2D" parent="AreaA/LeftExit"]
+position = Vector2(1.25001, 0)
+scale = Vector2(4.01563, 3)
+texture = SubResource("GradientTexture2D_ojajh")
+
+[connection signal="body_entered" from="AreaA" to="AreaA" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaA" to="AreaA" method="_on_body_exited"]

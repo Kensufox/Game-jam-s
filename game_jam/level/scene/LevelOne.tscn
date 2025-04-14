@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=15 format=3 uid="uid://ds7i3i4g45813"]
 
+[ext_resource type="PackedScene" uid="uid://hu2e46xudn85" path="res://level/scene/ExitLeft.tscn" id="1_1n1mg"]
+[ext_resource type="PackedScene" uid="uid://wp82wory420v" path="res://level/scene/ExitRight.tscn" id="1_61sn5"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_5m3tn"]
 [ext_resource type="PackedScene" uid="uid://dxxybg2twl0hw" path="res://level/scene/restartZone.tscn" id="3_5m3tn"]
 [ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
-[ext_resource type="PackedScene" uid="uid://hmsrf2g24egv" path="res://level/scene/EndRedirection.tscn" id="4_m7pgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5m3tn"]
 size = Vector2(64, 1288)
 
-[sub_resource type="Gradient" id="Gradient_5m3tn"]
+[sub_resource type="Gradient" id="Gradient_1n1mg"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m7pgx"]
-gradient = SubResource("Gradient_5m3tn")
+gradient = SubResource("Gradient_1n1mg")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_m7pgx"]
 a = Vector2(-928, 0)
@@ -33,6 +34,12 @@ gradient = SubResource("Gradient_m7pgx")
 
 [node name="LevelOne" type="Node2D"]
 position = Vector2(2, 0)
+
+[node name="ExitRight" parent="." instance=ExtResource("1_61sn5")]
+position = Vector2(1022, 1024)
+
+[node name="ExitLeft" parent="." instance=ExtResource("1_1n1mg")]
+position = Vector2(126, 848)
 
 [node name="Player1" parent="." instance=ExtResource("1_fksmy")]
 position = Vector2(382, 1152)
@@ -113,5 +120,3 @@ shape = SubResource("SegmentShape2D_5m3tn")
 position = Vector2(24, 20)
 scale = Vector2(0.0625, 2.125)
 texture = SubResource("GradientTexture2D_1n1mg")
-
-[node name="EndRedirection" parent="." instance=ExtResource("4_m7pgx")]

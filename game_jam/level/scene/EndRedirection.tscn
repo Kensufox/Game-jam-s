@@ -1,47 +1,51 @@
-[gd_scene load_steps=9 format=3 uid="uid://hmsrf2g24egv"]
+[gd_scene load_steps=9 format=3 uid="uid://bik6ry0fn02nv"]
 
-[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://level/scene/area_a.gd" id="1_p2e4p"]
-[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://level/scene/area_b.gd" id="2_rcho0"]
+[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://level/scripts/area_a.gd" id="1_p2e4p"]
+[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://level/scripts/area_b.gd" id="2_rcho0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2s44"]
-size = Vector2(257, 189)
+size = Vector2(258.5, 189)
 
-[sub_resource type="Gradient" id="Gradient_4r0hx"]
+[sub_resource type="Gradient" id="Gradient_rcho0"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2n2fw"]
-gradient = SubResource("Gradient_4r0hx")
+gradient = SubResource("Gradient_rcho0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcn5b"]
-size = Vector2(319, 193.5)
+size = Vector2(255.5, 193.5)
 
-[sub_resource type="Gradient" id="Gradient_jqrug"]
+[sub_resource type="Gradient" id="Gradient_wjytx"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xim55"]
-gradient = SubResource("Gradient_jqrug")
+gradient = SubResource("Gradient_wjytx")
 
 [node name="EndRedirection" type="Node2D"]
+position = Vector2(256, 0)
 
 [node name="AreaA" type="Area2D" parent="."]
-position = Vector2(926, -56)
+position = Vector2(608, -72)
 script = ExtResource("1_p2e4p")
 
 [node name="LeftExit" type="CollisionShape2D" parent="AreaA"]
-position = Vector2(-480, 168)
+position = Vector2(-479.25, 168)
 shape = SubResource("RectangleShape2D_w2s44")
 
 [node name="Sprite2D" type="Sprite2D" parent="AreaA/LeftExit"]
-scale = Vector2(4, 3)
+position = Vector2(1.25001, 0)
+scale = Vector2(4.01563, 3)
 texture = SubResource("GradientTexture2D_2n2fw")
 
 [node name="AreaB" type="Area2D" parent="."]
+position = Vector2(-64, 0)
 script = ExtResource("2_rcho0")
 
 [node name="RightExit" type="CollisionShape2D" parent="AreaB"]
-position = Vector2(1406, 112)
+position = Vector2(1344.25, 96)
 shape = SubResource("RectangleShape2D_vcn5b")
 
-[node name="Sprite2D" type="Sprite2D" parent="AreaB/RightExit"]
-scale = Vector2(5, 3)
+[node name="Sprite2D" type="Sprite2D" parent="AreaB"]
+position = Vector2(1344.06, 96)
+scale = Vector2(3.99805, 3)
 texture = SubResource("GradientTexture2D_xim55")
 
 [connection signal="body_entered" from="AreaA" to="AreaA" method="_on_body_entered"]

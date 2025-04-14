@@ -1,0 +1,160 @@
+[gd_scene load_steps=18 format=3 uid="uid://d4h0rpix5a4ie"]
+
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_3yu3w"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_14asd"]
+[ext_resource type="PackedScene" uid="uid://wp82wory420v" path="res://level/scene/ExitRight.tscn" id="3_bqgpp"]
+[ext_resource type="PackedScene" uid="uid://hu2e46xudn85" path="res://level/scene/ExitLeft.tscn" id="4_3lrts"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bqgpp"]
+a = Vector2(-928, 0)
+b = Vector2(1442, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3lrts"]
+a = Vector2(-928, 0)
+b = Vector2(1440, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hkhlw"]
+a = Vector2(0, -592)
+b = Vector2(0, 416)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3yu3w"]
+a = Vector2(0, -584)
+b = Vector2(0, 440)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl0ig"]
+size = Vector2(64, 1024)
+
+[sub_resource type="Gradient" id="Gradient_5m3tn"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4ls5l"]
+gradient = SubResource("Gradient_5m3tn")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14asd"]
+size = Vector2(128, 256)
+
+[sub_resource type="Gradient" id="Gradient_bqgpp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3lrts"]
+gradient = SubResource("Gradient_bqgpp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yu3w"]
+size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_14asd"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bqgpp"]
+gradient = SubResource("Gradient_14asd")
+
+[node name="LevelTwo" type="Node2D"]
+
+[node name="Player1" parent="." instance=ExtResource("1_3yu3w")]
+position = Vector2(512, 896)
+
+[node name="Player2" parent="." instance=ExtResource("2_14asd")]
+position = Vector2(1728, 896)
+
+[node name="Haut" type="StaticBody2D" parent="."]
+position = Vector2(926, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Haut"]
+shape = SubResource("SegmentShape2D_bqgpp")
+
+[node name="Bas" type="StaticBody2D" parent="."]
+position = Vector2(928, 1024)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bas"]
+shape = SubResource("SegmentShape2D_3lrts")
+
+[node name="Gauche" type="StaticBody2D" parent="."]
+position = Vector2(0, 592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gauche"]
+shape = SubResource("SegmentShape2D_hkhlw")
+
+[node name="Droite" type="StaticBody2D" parent="."]
+position = Vector2(1854, 664)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Droite"]
+position = Vector2(514, -80)
+shape = SubResource("SegmentShape2D_3yu3w")
+
+[node name="LimitPlayer" type="StaticBody2D" parent="."]
+position = Vector2(1184, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitPlayer"]
+position = Vector2(0, -136)
+shape = SubResource("RectangleShape2D_wl0ig")
+
+[node name="Camera2D" type="Camera2D" parent="LimitPlayer"]
+zoom = Vector2(0.48, 0.48)
+
+[node name="Sprite2D" type="Sprite2D" parent="LimitPlayer"]
+position = Vector2(0, -136)
+scale = Vector2(1, 16)
+texture = SubResource("GradientTexture2D_4ls5l")
+
+[node name="Wall1" type="StaticBody2D" parent="."]
+position = Vector2(280, 944)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
+position = Vector2(40, -48)
+shape = SubResource("RectangleShape2D_14asd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall1"]
+position = Vector2(40, -48)
+scale = Vector2(2, 4)
+texture = SubResource("GradientTexture2D_3lrts")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(2056, 992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(-8, -32)
+shape = SubResource("RectangleShape2D_3yu3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall2/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_bqgpp")
+
+[node name="Wall3" type="StaticBody2D" parent="."]
+position = Vector2(776, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+position = Vector2(56, 32)
+shape = SubResource("RectangleShape2D_3yu3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall3/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_bqgpp")
+
+[node name="Wall4" type="StaticBody2D" parent="."]
+position = Vector2(776, 288)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
+position = Vector2(56, 32)
+shape = SubResource("RectangleShape2D_3yu3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall4/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_bqgpp")
+
+[node name="Wall5" type="StaticBody2D" parent="."]
+position = Vector2(2248, 800)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall5"]
+position = Vector2(56, 32)
+shape = SubResource("RectangleShape2D_3yu3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall5/CollisionShape2D"]
+position = Vector2(0, 1.52588e-05)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_bqgpp")
+
+[node name="ExitRight" parent="." instance=ExtResource("3_bqgpp")]
+position = Vector2(1376, 616)
+
+[node name="ExitLeft" parent="." instance=ExtResource("4_3lrts")]
+position = Vector2(448, 464)
