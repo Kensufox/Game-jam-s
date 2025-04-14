@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds7i3i4g45813"]
+
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_fksmy"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_5m3tn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fksmy"]
+size = Vector2(67, 1297)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fksmy"]
+a = Vector2(-350, 790)
+b = Vector2(1943, 786)
+
+[node name="LevelOne" type="Node2D"]
+position = Vector2(2, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_fksmy")]
+position = Vector2(453, 1135)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_5m3tn")]
+position = Vector2(1704, 1136)
+
+[node name="LimitPlayer" type="StaticBody2D" parent="."]
+position = Vector2(362, 1037)
+
+[node name="Camera2D" type="Camera2D" parent="LimitPlayer"]
+position = Vector2(782, -386)
+zoom = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LimitPlayer"]
+position = Vector2(773, -388.5)
+shape = SubResource("RectangleShape2D_fksmy")
+
+[node name="gauche" type="StaticBody2D" parent="."]
+position = Vector2(-809, 1041)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gauche"]
+position = Vector2(773, -388.5)
+shape = SubResource("RectangleShape2D_fksmy")
+
+[node name="droite" type="StaticBody2D" parent="."]
+position = Vector2(1559, 1037)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="droite"]
+position = Vector2(773, -388.5)
+shape = SubResource("RectangleShape2D_fksmy")
+
+[node name="bas" type="StaticBody2D" parent="."]
+position = Vector2(294, 695)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bas"]
+position = Vector2(84, -181)
+shape = SubResource("SegmentShape2D_fksmy")
+
+[node name="haut" type="StaticBody2D" parent="."]
+position = Vector2(278, -611)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="haut"]
+position = Vector2(84, -181)
+shape = SubResource("SegmentShape2D_fksmy")
