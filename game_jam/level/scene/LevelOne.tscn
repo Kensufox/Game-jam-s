@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=15 format=3 uid="uid://ds7i3i4g45813"]
 
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="1_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="1_61sn5"]
@@ -21,6 +21,12 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fgvsu"]
 gradient = SubResource("Gradient_rxcfj")
+
+[sub_resource type="Gradient" id="Gradient_fgvsu"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tnqst"]
+gradient = SubResource("Gradient_fgvsu")
 
 [node name="LevelOne" type="Node2D"]
 
@@ -55,9 +61,6 @@ position = Vector2(112, 0)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
-[node name="Node2D" parent="Left/LeftArea/Tiles" instance=ExtResource("5_rxcfj")]
-position = Vector2(32, 192)
-
 [node name="Water" type="Node2D" parent="Left/LeftArea/Tiles"]
 position = Vector2(96, 64)
 
@@ -71,6 +74,17 @@ position = Vector2(80, 32)
 texture = ExtResource("4_1n1mg")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 64)
+
+[node name="Wall2" type="Node2D" parent="Left/LeftArea/Tiles"]
+position = Vector2(32, 192)
+
+[node name="Node2D" parent="Left/LeftArea/Tiles/Wall2" instance=ExtResource("5_rxcfj")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Wall2"]
+position = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_tnqst")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
@@ -115,8 +129,16 @@ position = Vector2(0, 64)
 [node name="Hitbox" parent="Right/LeftArea/Tiles/Lava" instance=ExtResource("3_5m3tn")]
 scale = Vector2(5, 2)
 
-[node name="Node2D" parent="Right/LeftArea/Tiles" instance=ExtResource("5_rxcfj")]
+[node name="Wall" type="Node2D" parent="Right/LeftArea/Tiles"]
 position = Vector2(192, 192)
+
+[node name="Node2D" parent="Right/LeftArea/Tiles/Wall" instance=ExtResource("5_rxcfj")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Right/LeftArea/Tiles/Wall"]
+position = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_tnqst")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Wall" type="Node2D" parent="Right/LeftArea"]
 
