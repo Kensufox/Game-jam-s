@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://hmsrf2g24egv"]
+[gd_scene load_steps=9 format=3 uid="uid://hmsrf2g24egv"]
 
 [ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://level/scene/area_a.gd" id="1_p2e4p"]
+[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://level/scene/area_b.gd" id="2_rcho0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2s44"]
 size = Vector2(257, 189)
@@ -22,7 +23,6 @@ gradient = SubResource("Gradient_jqrug")
 
 [node name="AreaA" type="Area2D" parent="."]
 position = Vector2(926, -56)
-collision_mask = 2
 script = ExtResource("1_p2e4p")
 
 [node name="LeftExit" type="CollisionShape2D" parent="AreaA"]
@@ -34,7 +34,7 @@ scale = Vector2(4, 3)
 texture = SubResource("GradientTexture2D_2n2fw")
 
 [node name="AreaB" type="Area2D" parent="."]
-collision_layer = 2
+script = ExtResource("2_rcho0")
 
 [node name="RightExit" type="CollisionShape2D" parent="AreaB"]
 position = Vector2(1406, 112)
@@ -45,3 +45,6 @@ scale = Vector2(5, 3)
 texture = SubResource("GradientTexture2D_xim55")
 
 [connection signal="body_entered" from="AreaA" to="AreaA" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaA" to="AreaA" method="_on_body_exited"]
+[connection signal="body_entered" from="AreaB" to="AreaB" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaB" to="AreaB" method="_on_body_exited"]

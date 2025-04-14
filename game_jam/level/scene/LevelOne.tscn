@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=14 format=3 uid="uid://ds7i3i4g45813"]
 
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_5m3tn"]
 [ext_resource type="PackedScene" uid="uid://dxxybg2twl0hw" path="res://level/scene/restartZone.tscn" id="3_5m3tn"]
+[ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://hmsrf2g24egv" path="res://level/scene/EndRedirection.tscn" id="4_m7pgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5m3tn"]
@@ -41,6 +42,11 @@ position = Vector2(1342, 1152)
 
 [node name="RestartZone" parent="." instance=ExtResource("3_5m3tn")]
 position = Vector2(382, 448)
+
+[node name="Sprite2D" type="Sprite2D" parent="RestartZone"]
+position = Vector2(224, 128)
+scale = Vector2(14, 8)
+texture = ExtResource("4_1n1mg")
 
 [node name="RestartZone2" parent="." instance=ExtResource("3_5m3tn")]
 position = Vector2(1022, 448)
