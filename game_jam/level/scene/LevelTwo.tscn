@@ -73,10 +73,10 @@ gradient = SubResource("Gradient_hkhlw")
 [node name="LevelTwo" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_3yu3w")]
-position = Vector2(256, 528)
+position = Vector2(512, 896)
 
 [node name="Player2" parent="." instance=ExtResource("2_14asd")]
-position = Vector2(1472, 648)
+position = Vector2(1664, 896)
 
 [node name="Haut" type="StaticBody2D" parent="."]
 position = Vector2(926, 0)
@@ -119,7 +119,7 @@ scale = Vector2(1, 16)
 texture = SubResource("GradientTexture2D_4ls5l")
 
 [node name="Wall1" type="StaticBody2D" parent="."]
-position = Vector2(280, 944)
+position = Vector2(136, 944)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1"]
 position = Vector2(40, -48)
@@ -232,30 +232,30 @@ shape = SubResource("RectangleShape2D_vx0ni")
 position = Vector2(-704, -280)
 shape = SubResource("RectangleShape2D_5kkn1")
 
-[node name="Pressure plate" type="Area2D" parent="."]
+[node name="Pressure Plate Water" type="Area2D" parent="."]
 position = Vector2(864, 752)
 script = ExtResource("6_hkhlw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plate"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure Plate Water"]
 position = Vector2(32, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Pressure plate lava" type="Area2D" parent="."]
-position = Vector2(1512, 440)
+[node name="Pressure Plate lava" type="Area2D" parent="."]
+position = Vector2(2144, 816)
 script = ExtResource("6_hkhlw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure plate lava"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure Plate lava"]
 position = Vector2(32, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Pressure plate lava"]
+[node name="Sprite2D" type="Sprite2D" parent="Pressure Plate lava"]
 position = Vector2(32, 16)
 scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_wl0ig")
 
 [connection signal="body_entered" from="HitBox Water" to="HitBox Water" method="_on_body_entered"]
 [connection signal="body_entered" from="HitBox Lava" to="HitBox Lava" method="_on_body_entered"]
-[connection signal="body_entered" from="Pressure plate" to="Pressure plate" method="_on_body_entered"]
-[connection signal="body_exited" from="Pressure plate" to="Pressure plate" method="_on_body_exited"]
-[connection signal="body_entered" from="Pressure plate lava" to="Pressure plate lava" method="_on_body_entered"]
-[connection signal="body_exited" from="Pressure plate lava" to="Pressure plate lava" method="_on_body_exited"]
+[connection signal="body_entered" from="Pressure Plate Water" to="Pressure Plate Water" method="_on_body_entered"]
+[connection signal="body_exited" from="Pressure Plate Water" to="Pressure Plate Water" method="_on_body_exited"]
+[connection signal="body_entered" from="Pressure Plate lava" to="Pressure Plate lava" method="_on_body_entered"]
+[connection signal="body_exited" from="Pressure Plate lava" to="Pressure Plate lava" method="_on_body_exited"]
