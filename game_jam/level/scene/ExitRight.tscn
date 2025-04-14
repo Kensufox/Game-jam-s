@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://wp82wory420v"]
+[gd_scene load_steps=5 format=3 uid="uid://c4gsaevd3rgpl"]
 
-[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://level/scripts/area_b.gd" id="1_u7xm0"]
+[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://Level/scripts/area_b.gd" id="1_elson"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvxdl"]
-size = Vector2(191.75, 128.75)
+size = Vector2(32, 32)
 
 [sub_resource type="Gradient" id="Gradient_wjytx"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_n1pgi"]
 gradient = SubResource("Gradient_wjytx")
@@ -13,16 +14,18 @@ gradient = SubResource("Gradient_wjytx")
 [node name="ExitRight" type="Node2D"]
 
 [node name="AreaB" type="Area2D" parent="."]
-script = ExtResource("1_u7xm0")
+collision_mask = 2
+script = ExtResource("1_elson")
 
 [node name="RightExit" type="CollisionShape2D" parent="AreaB"]
-position = Vector2(96.125, 63.625)
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_bvxdl")
 
 [node name="Sprite2D" type="Sprite2D" parent="AreaB"]
-position = Vector2(96.0156, 64)
-scale = Vector2(2.99951, 2)
+position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_n1pgi")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [connection signal="body_entered" from="AreaB" to="AreaB" method="_on_body_entered"]
 [connection signal="body_exited" from="AreaB" to="AreaB" method="_on_body_exited"]
