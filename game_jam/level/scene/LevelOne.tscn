@@ -23,7 +23,6 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_rxcfj")
 
 [node name="LevelOne" type="Node2D"]
-position = Vector2(2, 0)
 
 [node name="LimitPlayer" type="StaticBody2D" parent="."]
 position = Vector2(574, 314)
