@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_3yu3w"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_14asd"]
-[ext_resource type="PackedScene" uid="uid://wp82wory420v" path="res://level/scene/ExitRight.tscn" id="3_bqgpp"]
-[ext_resource type="PackedScene" uid="uid://hu2e46xudn85" path="res://level/scene/ExitLeft.tscn" id="4_3lrts"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="3_bqgpp"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="4_3lrts"]
 [ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://level/scripts/RestartZone.gd" id="5_3lrts"]
 [ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://level/scripts/PressurePlate.gd" id="6_hkhlw"]
 
