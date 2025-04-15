@@ -181,7 +181,6 @@ script = ExtResource("7_f5amq")
 
 [node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Link1/Bridge"]
 shape = SubResource("RectangleShape2D_4ls5l")
-disabled = true
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
@@ -318,6 +317,7 @@ script = ExtResource("7_f5amq")
 
 [node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Link1/Bridge"]
 shape = SubResource("RectangleShape2D_4ls5l")
+disabled = true
 
 [node name="Wall" type="Node2D" parent="Right/RightArea"]
 
