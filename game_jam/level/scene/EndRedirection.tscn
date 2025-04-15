@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6hhqvd7axexr"]
+[gd_scene load_steps=8 format=3 uid="uid://c6hhqvd7axexr"]
 
-[ext_resource type="Script" path="res://Level/Scene/area_a.gd" id="1_p2e4p"]
-[ext_resource type="Script" path="res://level/scripts/area_b.gd" id="2_rcho0"]
+[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://level/scripts/area_b.gd" id="2_rcho0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2s44"]
 size = Vector2(258.5, 189)
@@ -25,7 +24,6 @@ position = Vector2(256, 0)
 [node name="AreaA" type="Area2D" parent="."]
 position = Vector2(608, -72)
 collision_mask = 2
-script = ExtResource("1_p2e4p")
 
 [node name="LeftExit" type="CollisionShape2D" parent="AreaA"]
 position = Vector2(-479.25, 168)
