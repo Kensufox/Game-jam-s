@@ -67,7 +67,7 @@ region_rect = Rect2(0, 0, 288, 256)
 position = Vector2(112, 224)
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("4_3lrts")]
-position = Vector2(112, 0)
+position = Vector2(128, 0)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
@@ -212,7 +212,7 @@ region_rect = Rect2(0, 0, 288, 256)
 position = Vector2(88, 224)
 
 [node name="ExitRight" parent="Right/RightArea" instance=ExtResource("3_bqgpp")]
-position = Vector2(112, 0)
+position = Vector2(128, 0)
 
 [node name="Tiles" type="Node2D" parent="Right/RightArea"]
 

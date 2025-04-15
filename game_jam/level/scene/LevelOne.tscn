@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=15 format=3 uid="uid://ds7i3i4g45813"]
 
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="1_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_61sn5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_5m3tn"]
 [ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="5_rxcfj"]
+[ext_resource type="Texture2D" uid="uid://b6hd81n8pym67" path="res://asset/map/lava_texture_32x32.png" id="8_tnqst"]
 
 [sub_resource type="Gradient" id="Gradient_5gcvq"]
 
@@ -50,11 +51,11 @@ texture = SubResource("GradientTexture2D_fgvsu")
 region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
+[node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("1_1n1mg")]
+position = Vector2(128, 0)
+
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_fksmy")]
 position = Vector2(96, 192)
-
-[node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("1_1n1mg")]
-position = Vector2(112, 0)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
@@ -112,11 +113,11 @@ texture = SubResource("GradientTexture2D_fgvsu")
 region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
+[node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
+position = Vector2(128, 0)
+
 [node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
 position = Vector2(128, 192)
-
-[node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
-position = Vector2(112, 0)
 
 [node name="Tiles" type="Node2D" parent="Right/LeftArea"]
 
@@ -125,6 +126,14 @@ position = Vector2(0, 64)
 
 [node name="Hitbox" parent="Right/LeftArea/Tiles/Lava" instance=ExtResource("3_5m3tn")]
 scale = Vector2(5, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Right/LeftArea/Tiles/Lava"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(80, 32)
+texture = ExtResource("8_tnqst")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 64)
 
 [node name="Wall" type="Node2D" parent="Right/LeftArea/Tiles"]
 position = Vector2(192, 192)
