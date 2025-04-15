@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n6t4qasi0vk0"
-path="res://.godot/imported/water_texture_32x32.png-a74203d7aff932b063c85a37a9929495.ctex"
+uid="uid://b1u20pqcbl517"
+path="res://.godot/imported/rotate_button_pressed_32x32.png-dcb210435db6add51137021aa55564d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/map/water_texture_32x32.png"
-dest_files=["res://.godot/imported/water_texture_32x32.png-a74203d7aff932b063c85a37a9929495.ctex"]
+source_file="res://asset/map/rotate_button_pressed_32x32.png"
+dest_files=["res://.godot/imported/rotate_button_pressed_32x32.png-dcb210435db6add51137021aa55564d1.ctex"]
 
 [params]
 
