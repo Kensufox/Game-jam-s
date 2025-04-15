@@ -1,11 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://d4h0rpix5a4ie"]
 
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_3yu3w"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_14asd"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="3_bqgpp"]
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="4_3lrts"]
-[ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://level/scripts/PressurePlate.gd" id="6_hkhlw"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://level/scene/restartZone.tscn" id="7_m755j"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_3yu3w"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_14asd"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="3_bqgpp"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="4_3lrts"]
+[ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://Level/scripts/PressurePlate.gd" id="6_hkhlw"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="7_m755j"]
 [ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="8_f5amq"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="9_ycqr8"]
 
@@ -19,9 +19,6 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hrupw"]
 gradient = SubResource("Gradient_rxcfj")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ls5l"]
-size = Vector2(48, 32)
 
 [sub_resource type="Gradient" id="Gradient_fgvsu"]
 colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
@@ -39,6 +36,9 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 gradient = SubResource("Gradient_hkhlw")
 width = 32
 height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ls5l"]
+size = Vector2(48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ls5l"]
 
@@ -72,13 +72,6 @@ position = Vector2(128, 0)
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
 [node name="Water" type="Node2D" parent="Left/LeftArea/Tiles"]
-
-[node name="Bridge" type="Area2D" parent="Left/LeftArea/Tiles/Water"]
-position = Vector2(74, 74)
-
-[node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Water/Bridge"]
-position = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_4ls5l")
 
 [node name="Hitbox" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("7_m755j")]
 position = Vector2(0, 64)
@@ -130,54 +123,63 @@ texture = ExtResource("8_f5amq")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 32)
 
-[node name="Obtacle" type="Node2D" parent="Left/LeftArea/Tiles"]
+[node name="Obstacle" type="Node2D" parent="Left/LeftArea/Tiles"]
 
-[node name="1" type="Node2D" parent="Left/LeftArea/Tiles/Obtacle"]
+[node name="1" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
 position = Vector2(224, 0)
 
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obtacle/1" instance=ExtResource("9_ycqr8")]
+[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/1" instance=ExtResource("9_ycqr8")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obtacle/1"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/1"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_70lai")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="2" type="Node2D" parent="Left/LeftArea/Tiles/Obtacle"]
+[node name="2" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
 position = Vector2(224, 64)
 
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obtacle/2" instance=ExtResource("9_ycqr8")]
+[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/2" instance=ExtResource("9_ycqr8")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obtacle/2"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/2"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_70lai")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="3" type="Node2D" parent="Left/LeftArea/Tiles/Obtacle"]
+[node name="3" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
 position = Vector2(64, 192)
 scale = Vector2(1, 2)
 
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obtacle/3" instance=ExtResource("9_ycqr8")]
+[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/3" instance=ExtResource("9_ycqr8")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obtacle/3"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/3"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_70lai")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="PressurePlateWater" type="Area2D" parent="Left/LeftArea/Tiles"]
+[node name="Interactif" type="Node2D" parent="Left/LeftArea/Tiles"]
+
+[node name="PressurePlateWater" type="Area2D" parent="Left/LeftArea/Tiles/Interactif"]
 position = Vector2(224, 192)
 collision_mask = 2
 script = ExtResource("6_hkhlw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftArea/Tiles/PressurePlateWater"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlateWater"]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/PressurePlateWater"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlateWater"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_wl0ig")
+
+[node name="Bridge" type="Area2D" parent="Left/LeftArea/Tiles/Interactif"]
+position = Vector2(74, 74)
+
+[node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Bridge"]
+position = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_4ls5l")
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
@@ -237,49 +239,51 @@ scale = Vector2(2, 1)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Right/RightArea/Tiles/Lava"]
 sprite_frames = SubResource("SpriteFrames_4ls5l")
 
-[node name="Bridge" type="Area2D" parent="Right/RightArea/Tiles/Lava"]
-position = Vector2(74, 74)
+[node name="Obstacle" type="Node2D" parent="Right/RightArea/Tiles"]
 
-[node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Lava/Bridge"]
-position = Vector2(6, 6)
-shape = SubResource("RectangleShape2D_4ls5l")
-
-[node name="Obtacle" type="Node2D" parent="Right/RightArea/Tiles"]
-
-[node name="1" type="Node2D" parent="Right/RightArea/Tiles/Obtacle"]
+[node name="1" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
 position = Vector2(192, 224)
 
-[node name="Node2D" parent="Right/RightArea/Tiles/Obtacle/1" instance=ExtResource("9_ycqr8")]
+[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/1" instance=ExtResource("9_ycqr8")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obtacle/1"]
+[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/1"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_70lai")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="2" type="Node2D" parent="Right/RightArea/Tiles/Obtacle"]
+[node name="2" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
 position = Vector2(256, 160)
 
-[node name="Node2D" parent="Right/RightArea/Tiles/Obtacle/2" instance=ExtResource("9_ycqr8")]
+[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/2" instance=ExtResource("9_ycqr8")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obtacle/2"]
+[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/2"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_70lai")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="PressurePlateWater" type="Area2D" parent="Right/RightArea/Tiles"]
+[node name="Interactif" type="Node2D" parent="Right/RightArea/Tiles"]
+
+[node name="PressurePlateLava" type="Area2D" parent="Right/RightArea/Tiles/Interactif"]
 position = Vector2(224, 192)
 collision_mask = 2
 script = ExtResource("6_hkhlw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightArea/Tiles/PressurePlateWater"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/PressurePlateLava"]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/PressurePlateWater"]
+[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Interactif/PressurePlateLava"]
 position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_wl0ig")
+
+[node name="Bridge" type="Area2D" parent="Right/RightArea/Tiles/Interactif"]
+position = Vector2(74, 74)
+
+[node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Bridge"]
+position = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_4ls5l")
 
 [node name="Wall" type="Node2D" parent="Right/RightArea"]
 
@@ -303,7 +307,7 @@ scale = Vector2(9, 1)
 position = Vector2(576, 320)
 zoom = Vector2(1.5, 1.5)
 
-[connection signal="body_entered" from="Left/LeftArea/Tiles/PressurePlateWater" to="Left/LeftArea/Tiles/PressurePlateWater" method="_on_body_entered"]
-[connection signal="body_exited" from="Left/LeftArea/Tiles/PressurePlateWater" to="Left/LeftArea/Tiles/PressurePlateWater" method="_on_body_exited"]
-[connection signal="body_entered" from="Right/RightArea/Tiles/PressurePlateWater" to="Right/RightArea/Tiles/PressurePlateWater" method="_on_body_entered"]
-[connection signal="body_exited" from="Right/RightArea/Tiles/PressurePlateWater" to="Right/RightArea/Tiles/PressurePlateWater" method="_on_body_exited"]
+[connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/PressurePlateWater" to="Left/LeftArea/Tiles/Interactif/PressurePlateWater" method="_on_body_entered"]
+[connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/PressurePlateWater" to="Left/LeftArea/Tiles/Interactif/PressurePlateWater" method="_on_body_exited"]
+[connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/PressurePlateLava" to="Right/RightArea/Tiles/Interactif/PressurePlateLava" method="_on_body_entered"]
+[connection signal="body_exited" from="Right/RightArea/Tiles/Interactif/PressurePlateLava" to="Right/RightArea/Tiles/Interactif/PressurePlateLava" method="_on_body_exited"]

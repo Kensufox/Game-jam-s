@@ -73,16 +73,20 @@ texture = ExtResource("4_1n1mg")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 64)
 
-[node name="Wall2" type="Node2D" parent="Left/LeftArea/Tiles"]
-position = Vector2(32, 192)
+[node name="Obstacle" type="Node2D" parent="Left/LeftArea/Tiles"]
+position = Vector2(96, 128)
 
-[node name="Node2D" parent="Left/LeftArea/Tiles/Wall2" instance=ExtResource("5_rxcfj")]
+[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle" instance=ExtResource("5_rxcfj")]
+position = Vector2(-64, 64)
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Wall2"]
-position = Vector2(16, 16)
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle"]
+position = Vector2(-48, 80)
 texture = SubResource("GradientTexture2D_tnqst")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Interatif" type="Node2D" parent="Left/LeftArea/Tiles"]
+position = Vector2(96, 64)
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
@@ -113,11 +117,11 @@ texture = SubResource("GradientTexture2D_fgvsu")
 region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
-[node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
-position = Vector2(128, 0)
-
 [node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
 position = Vector2(128, 192)
+
+[node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
+position = Vector2(128, 0)
 
 [node name="Tiles" type="Node2D" parent="Right/LeftArea"]
 
@@ -135,16 +139,19 @@ texture = ExtResource("8_tnqst")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 64)
 
-[node name="Wall" type="Node2D" parent="Right/LeftArea/Tiles"]
-position = Vector2(192, 192)
+[node name="Obstacle" type="Node2D" parent="Right/LeftArea/Tiles"]
+position = Vector2(0, 64)
 
-[node name="Node2D" parent="Right/LeftArea/Tiles/Wall" instance=ExtResource("5_rxcfj")]
+[node name="Node2D" parent="Right/LeftArea/Tiles/Obstacle" instance=ExtResource("5_rxcfj")]
+position = Vector2(192, 128)
 
-[node name="Sprite2D" type="Sprite2D" parent="Right/LeftArea/Tiles/Wall"]
-position = Vector2(16, 16)
+[node name="Sprite2D" type="Sprite2D" parent="Right/LeftArea/Tiles/Obstacle"]
+position = Vector2(208, 144)
 texture = SubResource("GradientTexture2D_tnqst")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Interatif" type="Node2D" parent="Right/LeftArea/Tiles"]
 
 [node name="Wall" type="Node2D" parent="Right/LeftArea"]
 
