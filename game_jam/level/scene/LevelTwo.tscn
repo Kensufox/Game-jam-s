@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://Level/scripts/PressurePlate.gd" id="6_hkhlw"]
 [ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://Level/scripts/RestartZone.gd" id="7_f5amq"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="7_m755j"]
-[ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="8_f5amq"]
+[ext_resource type="Texture2D" uid="uid://cu3v47kqvtmwu" path="res://asset/map/water_texture_32x32.png" id="8_f5amq"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="9_ycqr8"]
-[ext_resource type="Texture2D" uid="uid://b6hd81n8pym67" path="res://asset/map/lava_texture_32x32.png" id="10_f5amq"]
+[ext_resource type="Texture2D" uid="uid://bbf56p4crsml7" path="res://asset/map/lava_texture_32x32.png" id="10_f5amq"]
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
 
@@ -40,7 +40,7 @@ width = 32
 height = 32
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ls5l"]
-size = Vector2(48, 32)
+size = Vector2(32, 32)
 
 [node name="LevelTwo" type="Node2D"]
 
@@ -75,11 +75,11 @@ position = Vector2(128, 224)
 
 [node name="Hitbox" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("7_m755j")]
 position = Vector2(0, 64)
-scale = Vector2(1.75, 1)
+scale = Vector2(2, 1)
 
 [node name="Hitbox2" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("7_m755j")]
-position = Vector2(104, 64)
-scale = Vector2(2.75, 1)
+position = Vector2(96, 64)
+scale = Vector2(3, 1)
 
 [node name="Hitbox3" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("7_m755j")]
 position = Vector2(192, 64)
@@ -92,8 +92,7 @@ scale = Vector2(2, 1)
 [node name="WaterTexture" type="Sprite2D" parent="Left/LeftArea/Tiles/Water"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(28, 80)
-scale = Vector2(0.875, 1)
+position = Vector2(32, 80)
 texture = ExtResource("8_f5amq")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 32)
@@ -101,8 +100,7 @@ region_rect = Rect2(0, 0, 64, 32)
 [node name="WaterTexture2" type="Sprite2D" parent="Left/LeftArea/Tiles/Water"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(148, 80)
-scale = Vector2(0.916667, 1)
+position = Vector2(144, 80)
 texture = ExtResource("8_f5amq")
 region_enabled = true
 region_rect = Rect2(0, 0, 96, 32)
@@ -226,11 +224,11 @@ position = Vector2(128, 224)
 
 [node name="Hitbox2" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("7_m755j")]
 position = Vector2(0, 64)
-scale = Vector2(1.75, 1)
+scale = Vector2(2, 1)
 
 [node name="Hitbox3" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("7_m755j")]
-position = Vector2(104, 64)
-scale = Vector2(2.75, 1)
+position = Vector2(96, 64)
+scale = Vector2(3, 1)
 
 [node name="Hitbox4" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("7_m755j")]
 position = Vector2(192, 64)
@@ -243,8 +241,7 @@ scale = Vector2(2, 1)
 [node name="WaterTexture" type="Sprite2D" parent="Right/RightArea/Tiles/Lava"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(28, 80)
-scale = Vector2(0.875, 1)
+position = Vector2(32, 80)
 texture = ExtResource("10_f5amq")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 32)
@@ -252,8 +249,7 @@ region_rect = Rect2(0, 0, 64, 32)
 [node name="WaterTexture2" type="Sprite2D" parent="Right/RightArea/Tiles/Lava"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(148, 80)
-scale = Vector2(0.916667, 1)
+position = Vector2(144, 80)
 texture = ExtResource("10_f5amq")
 region_enabled = true
 region_rect = Rect2(0, 0, 96, 32)
