@@ -4,6 +4,9 @@ var zone_gauche := false
 var zone_droite := false
 var cpt := 1
 
+
+var move_cooldown := 0.2
+
 func reset():
 		var zone_gauche := false
 		var zone_droite := false

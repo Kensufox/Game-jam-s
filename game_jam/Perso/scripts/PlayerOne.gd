@@ -2,21 +2,36 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 125.0
+var time_since_move := 0.0
 
 func _physics_process(delta: float) -> void:
-	var direction := Vector2.ZERO
-	direction.x = Input.get_axis("ui_left", "ui_right")
-	direction.y = Input.get_axis("ui_up", "ui_down")
-	
-	if direction:
-		velocity = direction.normalized() * SPEED
-	else:
-		velocity = Vector2.ZERO
-		
-	set_animation(direction)
+	time_since_move += delta
+	print("player : ", name, " time : ", time_since_move)
+	if time_since_move >= VariableGlobale.move_cooldown:
+		var direction := Vector2.ZERO
+		direction.x = Input.get_axis("ui_left", "ui_right")
+		direction.y = Input.get_axis("ui_up", "ui_down")
 
-	move_and_slide()
+		if direction != Vector2.ZERO:
+			print("moved")
+			move_and_collide(direction.normalized() * 32)
+			position = Vector2(int(position.x), int(position.y))
+			time_since_move = 0.0
+	#move_and_slide()
+		
+	#var direction := Vector2.ZERO
+	#direction.x = Input.get_axis("ui_left", "ui_right")
+	#direction.y = Input.get_axis("ui_up", "ui_down")
+	
+	#if direction:
+	#	velocity = direction.normalized() * SPEED
+	#else:
+	#	velocity = Vector2.ZERO
+		
+	#set_animation(direction)
+
+	#move_and_slide()
+
 
 func set_animation(direction):
 	if direction.x > 0: animated_sprite_2d.flip_h = false
