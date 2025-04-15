@@ -9,7 +9,7 @@ func _ready():
 func _on_body_entered(body: Node) -> void:
 	if not bodies_inside.has(body):
 		bodies_inside.append(body)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.1).timeout
 	if bodies_inside.size() != 0:
 		get_tree().reload_current_scene()
 

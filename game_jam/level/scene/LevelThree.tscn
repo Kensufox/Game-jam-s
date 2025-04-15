@@ -1,3 +1,235 @@
-[gd_scene load_steps=0 format=3 uid="uid://cif038n6buer6"]
+[gd_scene load_steps=16 format=3 uid="uid://cif038n6buer6"]
+
+[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://level/scripts/timer.gd" id="1_mxo8o"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="1_ql7ep"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_yupli"]
+[ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="2_yol54"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://level/scene/restartZone.tscn" id="3_b5i5v"]
+[ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_0jsfo"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="6_6tuhd"]
+[ext_resource type="Texture2D" uid="uid://b6hd81n8pym67" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
+
+[sub_resource type="Gradient" id="Gradient_pmkty"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fa538"]
+gradient = SubResource("Gradient_pmkty")
+
+[sub_resource type="Gradient" id="Gradient_b5i5v"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0jsfo"]
+gradient = SubResource("Gradient_b5i5v")
+width = 160
+height = 416
+fill_from = Vector2(1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tuhd"]
+size = Vector2(160, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxo8o"]
+size = Vector2(32, 416)
 
 [node name="LevelThree" type="Node2D"]
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 96.0
+offset_top = 440.0
+offset_right = 384.0
+offset_bottom = 463.0
+script = ExtResource("1_mxo8o")
+
+[node name="Split" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Split"]
+position = Vector2(224, 176)
+scale = Vector2(1, 7.5)
+texture = SubResource("GradientTexture2D_fa538")
+
+[node name="Left" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Left"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Left/Node2D"]
+position = Vector2(80, 208)
+texture = SubResource("GradientTexture2D_0jsfo")
+
+[node name="ExitLeft" parent="Left/Node2D" instance=ExtResource("2_yol54")]
+position = Vector2(64, 0)
+
+[node name="PlayerOne" parent="Left/Node2D" instance=ExtResource("1_yupli")]
+position = Vector2(64, 384)
+
+[node name="Walls" type="Node2D" parent="Left/Node2D"]
+
+[node name="Wall1" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 384)
+
+[node name="Wall2" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(128, 352)
+
+[node name="Wall3" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(0, 320)
+scale = Vector2(3, 1)
+
+[node name="Wall4" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(96, 256)
+scale = Vector2(1, 2)
+
+[node name="Wall5" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 224)
+scale = Vector2(1, 2)
+
+[node name="Wall6" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 160)
+
+[node name="Wall7" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(96, 128)
+
+[node name="Wall8" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(96, 0)
+
+[node name="Wall9" parent="Left/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 32)
+scale = Vector2(3, 1)
+
+[node name="Water" type="Node2D" parent="Left/Node2D"]
+
+[node name="DeathZone1" parent="Left/Node2D/Water" instance=ExtResource("3_b5i5v")]
+position = Vector2(32, 192)
+scale = Vector2(4, 1)
+
+[node name="DeathZone2" parent="Left/Node2D/Water" instance=ExtResource("3_b5i5v")]
+position = Vector2(0, 96)
+scale = Vector2(4, 1)
+
+[node name="WaterTexture1" type="Sprite2D" parent="Left/Node2D/Water"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(64, 112)
+texture = ExtResource("4_0jsfo")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 32)
+
+[node name="WaterTexture2" type="Sprite2D" parent="Left/Node2D/Water"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(96, 208)
+texture = ExtResource("4_0jsfo")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 32)
+
+[node name="LimitPlayer" type="Node2D" parent="Left/Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Left/Node2D/LimitPlayer"]
+
+[node name="haut" type="CollisionShape2D" parent="Left/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(80, -4)
+shape = SubResource("RectangleShape2D_6tuhd")
+
+[node name="bas" type="CollisionShape2D" parent="Left/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(80, 420)
+shape = SubResource("RectangleShape2D_6tuhd")
+
+[node name="gauche" type="CollisionShape2D" parent="Left/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(-16, 208)
+shape = SubResource("RectangleShape2D_mxo8o")
+
+[node name="droite" type="CollisionShape2D" parent="Left/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(176, 208)
+shape = SubResource("RectangleShape2D_mxo8o")
+
+[node name="Right" type="Node" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Right"]
+position = Vector2(288, 0)
+
+[node name="PlayerTwo" parent="Right/Node2D" instance=ExtResource("6_6tuhd")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Right/Node2D"]
+position = Vector2(80, 208)
+texture = SubResource("GradientTexture2D_0jsfo")
+
+[node name="ExitRight" parent="Right/Node2D" instance=ExtResource("1_ql7ep")]
+position = Vector2(64, 0)
+
+[node name="CharacterBody2D" parent="Right/Node2D" instance=ExtResource("6_6tuhd")]
+position = Vector2(64, 384)
+
+[node name="Walls" type="Node2D" parent="Right/Node2D"]
+
+[node name="Wall1" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 384)
+
+[node name="Wall2" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(128, 352)
+
+[node name="Wall3" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(0, 320)
+scale = Vector2(3, 1)
+
+[node name="Wall4" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(96, 256)
+scale = Vector2(1, 2)
+
+[node name="Wall5" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 224)
+scale = Vector2(1, 2)
+
+[node name="Wall6" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 160)
+
+[node name="Wall7" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(96, 128)
+
+[node name="Wall8" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(96, 0)
+
+[node name="Wall9" parent="Right/Node2D/Walls" instance=ExtResource("2_yo0wg")]
+position = Vector2(32, 32)
+scale = Vector2(3, 1)
+
+[node name="Water" type="Node2D" parent="Right/Node2D"]
+
+[node name="DeathZone1" parent="Right/Node2D/Water" instance=ExtResource("3_b5i5v")]
+position = Vector2(32, 192)
+scale = Vector2(4, 1)
+
+[node name="DeathZone2" parent="Right/Node2D/Water" instance=ExtResource("3_b5i5v")]
+position = Vector2(0, 96)
+scale = Vector2(4, 1)
+
+[node name="WaterTexture1" type="Sprite2D" parent="Right/Node2D/Water"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(64, 112)
+texture = ExtResource("8_mxo8o")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 32)
+
+[node name="WaterTexture2" type="Sprite2D" parent="Right/Node2D/Water"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(96, 208)
+texture = ExtResource("8_mxo8o")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 32)
+
+[node name="LimitPlayer" type="Node2D" parent="Right/Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Right/Node2D/LimitPlayer"]
+
+[node name="haut" type="CollisionShape2D" parent="Right/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(80, -4)
+shape = SubResource("RectangleShape2D_6tuhd")
+
+[node name="bas" type="CollisionShape2D" parent="Right/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(80, 420)
+shape = SubResource("RectangleShape2D_6tuhd")
+
+[node name="gauche" type="CollisionShape2D" parent="Right/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(-16, 208)
+shape = SubResource("RectangleShape2D_mxo8o")
+
+[node name="droite" type="CollisionShape2D" parent="Right/Node2D/LimitPlayer/StaticBody2D"]
+position = Vector2(176, 208)
+shape = SubResource("RectangleShape2D_mxo8o")
