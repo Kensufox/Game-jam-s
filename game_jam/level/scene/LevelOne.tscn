@@ -8,27 +8,27 @@
 [ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="5_rxcfj"]
 
-[sub_resource type="Gradient" id="Gradient_1n1mg"]
+[sub_resource type="Gradient" id="Gradient_5gcvq"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m7pgx"]
-gradient = SubResource("Gradient_1n1mg")
+gradient = SubResource("Gradient_5gcvq")
 
-[sub_resource type="Gradient" id="Gradient_rxcfj"]
+[sub_resource type="Gradient" id="Gradient_fgvsu"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fgvsu"]
-gradient = SubResource("Gradient_rxcfj")
+gradient = SubResource("Gradient_fgvsu")
 
-[sub_resource type="Gradient" id="Gradient_fgvsu"]
+[sub_resource type="Gradient" id="Gradient_tnqst"]
 colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tnqst"]
-gradient = SubResource("Gradient_fgvsu")
+gradient = SubResource("Gradient_tnqst")
 
 [node name="LevelOne" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(574, 314)
+position = Vector2(576, 320)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Slit" type="Node2D" parent="."]
