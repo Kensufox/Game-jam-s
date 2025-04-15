@@ -1,8 +1,16 @@
 extends Node
 
 func _on_body_entered(body: Node2D) -> void:
-	$"../HitBox Water/Bridge".set_deferred("disabled", true)
-	print("test")
+	if body.name == "LeftPlayer":
+		$"../Water/Bridge/Bridge".set_deferred("disabled", true)
+		print($"../Water/Bridge/Bridge".disabled)
+	#else:
+		
+	
 
 func _on_body_exited(body: Node2D) -> void:
-	$"../HitBox Water/Bridge".set_deferred("disabled", true)
+	$"../Water/Bridge/Bridge".set_deferred("disabled", false)
+	print($"../Water/Bridge/Bridge".disabled)
+
+	
+#$"../Water/Bridge/Bridge"$ "../../../../Right/RightArea/Tiles/Lava/Bridge/Bridge"
