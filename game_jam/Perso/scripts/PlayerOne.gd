@@ -3,13 +3,11 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var time_since_move := 0.0
+var move_cooldown := 0.2
 
 func _physics_process(delta: float) -> void:
 	time_since_move += delta
-	
-	print("player : ", name, " time : ", time_since_move)
-
-	if time_since_move >= VariableGlobale.move_cooldown:
+	if time_since_move >= move_cooldown:
 		var direction := Vector2.ZERO
 		direction.x = Input.get_axis("ui_left", "ui_right")
 		direction.y = Input.get_axis("ui_up", "ui_down")
@@ -20,9 +18,8 @@ func _physics_process(delta: float) -> void:
 			direction.x = 0
 
 		if direction != Vector2.ZERO:
-			print("moved")
 			move_and_collide(direction.normalized() * 32)
-			position = Vector2(int(position.x), int(position.y))
+			position = Vector2(round(position.x/32)*32, round(position.y/32)*32)
 			time_since_move = 0.0
 			set_animation(direction)
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://ds7i3i4g45813"]
 
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://level/scene/ExitLeft.tscn" id="1_1n1mg"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://level/scene/ExitRight.tscn" id="1_61sn5"]
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_fksmy"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_5m3tn"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://level/scene/restartZone.tscn" id="3_5m3tn"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="1_1n1mg"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_61sn5"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_fksmy"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_5m3tn"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_5m3tn"]
 [ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="5_rxcfj"]
 [ext_resource type="Texture2D" uid="uid://b6hd81n8pym67" path="res://asset/map/lava_texture_32x32.png" id="8_tnqst"]
@@ -117,11 +117,11 @@ texture = SubResource("GradientTexture2D_fgvsu")
 region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
-[node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
-position = Vector2(128, 192)
-
 [node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
 position = Vector2(128, 0)
+
+[node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
+position = Vector2(128, 192)
 
 [node name="Tiles" type="Node2D" parent="Right/LeftArea"]
 
