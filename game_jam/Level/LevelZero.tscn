@@ -1,13 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://cif038n6buer6"]
+[gd_scene load_steps=17 format=4 uid="uid://dw4uhijylmeh1"]
 
-[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://level/scripts/timer.gd" id="1_mxo8o"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_ql7ep"]
+[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://Level/scripts/timer.gd" id="1_mxo8o"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
 [ext_resource type="Texture2D" uid="uid://cu3v47kqvtmwu" path="res://asset/map/water_texture_32x32.png" id="4_0jsfo"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="6_6tuhd"]
 [ext_resource type="Texture2D" uid="uid://be8fwv010jajl" path="res://asset/map/grass_texture_32x32.png" id="7_6h4ix"]
 [ext_resource type="Texture2D" uid="uid://bbf56p4crsml7" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
 
@@ -63,11 +61,11 @@ region_rect = Rect2(0, 0, 64, 800)
 [node name="Left" type="Node" parent="."]
 
 [node name="LeftArea" type="Node2D" parent="Left"]
-position = Vector2(288, 128)
+position = Vector2(256, 192)
 
 [node name="Background" type="TileMapLayer" parent="Left/LeftArea"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAAAAAkAAgAAAAAAAAAAAAoAAgAAAAAAAAAAAAsAAgAAAAAAAAAAAAwAAgAAAAAAAAABAAwAAgAAAAAAAAACAAwAAgAAAAAAAAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAEAAsAAgAAAAAAAAAEAAoAAgAAAAAAAAAEAAkAAgAAAAAAAAAEAAgAAgAAAAAAAAAEAAcAAgAAAAAAAAAEAAYAAgAAAAAAAAAEAAUAAgAAAAAAAAADAAUAAgAAAAAAAAADAAQAAgAAAAAAAAADAAMAAgAAAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAACAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAUAAgAAAAAAAAABAAUAAgAAAAAAAAADAAYAAgAAAAAAAAACAAYAAgAAAAAAAAABAAYAAgAAAAAAAAADAAcAAgAAAAAAAAACAAcAAgAAAAAAAAABAAcAAgAAAAAAAAADAAgAAgAAAAAAAAACAAgAAgAAAAAAAAABAAgAAgAAAAAAAAACAAkAAgAAAAAAAAADAAkAAgAAAAAAAAABAAkAAgAAAAAAAAADAAoAAgAAAAAAAAACAAoAAgAAAAAAAAABAAoAAgAAAAAAAAADAAsAAgAAAAAAAAACAAsAAgAAAAAAAAABAAsAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAFAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAADAAYAAgAAAAAAAAACAAYAAgAAAAAAAAABAAYAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAADAAQAAgAAAAAAAAACAAQAAgAAAAAAAAABAAQAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAAFAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAABAAIAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAADAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAADAAAAAgAAAAAAAAACAAAAAgAAAAAAAAABAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ticer")
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("2_yol54")]
@@ -78,34 +76,22 @@ position = Vector2(64, 0)
 [node name="Water" type="Node2D" parent="Left/LeftArea/Tiles"]
 
 [node name="Hitbox" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("3_b5i5v")]
-position = Vector2(0, 96)
-scale = Vector2(4, 1)
-
-[node name="Hitbox2" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("3_b5i5v")]
-position = Vector2(32, 192)
-scale = Vector2(4, 1)
+position = Vector2(160, 0)
+scale = Vector2(3, 2)
 
 [node name="WaterTexture" type="Sprite2D" parent="Left/LeftArea/Tiles/Water"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(64, 112)
+position = Vector2(208, 32)
 texture = ExtResource("4_0jsfo")
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 32)
-
-[node name="WaterTexture2" type="Sprite2D" parent="Left/LeftArea/Tiles/Water"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(96, 208)
-texture = ExtResource("4_0jsfo")
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 32)
+region_rect = Rect2(0, 0, 96, 64)
 
 [node name="Obstacle" type="Node2D" parent="Left/LeftArea/Tiles"]
 
 [node name="1" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(96, 0)
-scale = Vector2(1, 2)
+position = Vector2(128, 0)
+scale = Vector2(1, 3)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/1" instance=ExtResource("2_yo0wg")]
 
@@ -116,8 +102,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="2" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(32, 32)
-scale = Vector2(2, 1)
+position = Vector2(64, 128)
+scale = Vector2(2, 2)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/2" instance=ExtResource("2_yo0wg")]
 
@@ -128,7 +114,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="3" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(96, 128)
+position = Vector2(160, 160)
+scale = Vector2(2, 1)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/3" instance=ExtResource("2_yo0wg")]
 
@@ -139,7 +126,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="4" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(32, 160)
+position = Vector2(0, 32)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/4" instance=ExtResource("2_yo0wg")]
 
@@ -149,97 +136,39 @@ texture = SubResource("GradientTexture2D_d26v2")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="5" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(32, 224)
-scale = Vector2(1, 2)
-
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/5" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/5"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="6" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(96, 256)
-scale = Vector2(1, 2)
-
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/6" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/6"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="7" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(0, 320)
-scale = Vector2(3, 1)
-
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/7" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/7"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="8" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(128, 352)
-
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/8" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/8"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="9" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(32, 384)
-
-[node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/9" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/9"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
 [node name="Interactif" type="Node2D" parent="Left/LeftArea/Tiles"]
 
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_yupli")]
-position = Vector2(64, 384)
+position = Vector2(128, 224)
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
 [node name="Left" parent="Left/LeftArea/Wall" instance=ExtResource("2_yo0wg")]
 position = Vector2(-32, 0)
-scale = Vector2(1, 13)
+scale = Vector2(1, 8)
 
 [node name="Right" parent="Left/LeftArea/Wall" instance=ExtResource("2_yo0wg")]
-position = Vector2(160, 0)
-scale = Vector2(1, 13)
+position = Vector2(256, 0)
+scale = Vector2(1, 8)
 
 [node name="Up" parent="Left/LeftArea/Wall" instance=ExtResource("2_yo0wg")]
 position = Vector2(0, -32)
-scale = Vector2(5, 1)
+scale = Vector2(8, 1)
 
 [node name="Down" parent="Left/LeftArea/Wall" instance=ExtResource("2_yo0wg")]
-position = Vector2(0, 416)
-scale = Vector2(5, 1)
+position = Vector2(0, 256)
+scale = Vector2(8, 1)
 
 [node name="Right" type="Node" parent="."]
 
 [node name="RightArea" type="Node2D" parent="Right"]
-position = Vector2(704, 128)
+position = Vector2(640, 192)
 
 [node name="Background" type="TileMapLayer" parent="Right/RightArea"]
 texture_filter = 1
 tile_set = SubResource("TileSet_ticer")
 
-[node name="ExitRight" parent="Right/RightArea" instance=ExtResource("1_ql7ep")]
+[node name="ExitRight" parent="Right/RightArea" instance=ExtResource("2_yol54")]
 position = Vector2(64, 0)
 
 [node name="Tiles" type="Node2D" parent="Right/RightArea"]
@@ -247,34 +176,22 @@ position = Vector2(64, 0)
 [node name="Lava" type="Node2D" parent="Right/RightArea/Tiles"]
 
 [node name="Hitbox" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("3_b5i5v")]
-position = Vector2(0, 96)
-scale = Vector2(4, 1)
-
-[node name="Hitbox2" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("3_b5i5v")]
-position = Vector2(32, 192)
-scale = Vector2(4, 1)
+position = Vector2(160, 0)
+scale = Vector2(3, 2)
 
 [node name="WaterTexture" type="Sprite2D" parent="Right/RightArea/Tiles/Lava"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(64, 112)
+position = Vector2(208, 32)
 texture = ExtResource("8_mxo8o")
 region_enabled = true
-region_rect = Rect2(0, 0, 128, 32)
-
-[node name="WaterTexture2" type="Sprite2D" parent="Right/RightArea/Tiles/Lava"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(96, 208)
-texture = ExtResource("8_mxo8o")
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 32)
+region_rect = Rect2(0, 0, 96, 64)
 
 [node name="Obstacle" type="Node2D" parent="Right/RightArea/Tiles"]
 
 [node name="1" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(96, 0)
-scale = Vector2(1, 2)
+position = Vector2(128, 0)
+scale = Vector2(1, 3)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/1" instance=ExtResource("2_yo0wg")]
 
@@ -285,8 +202,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="2" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(32, 32)
-scale = Vector2(2, 1)
+position = Vector2(64, 128)
+scale = Vector2(2, 2)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/2" instance=ExtResource("2_yo0wg")]
 
@@ -297,7 +214,8 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="3" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(96, 128)
+position = Vector2(160, 160)
+scale = Vector2(2, 1)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/3" instance=ExtResource("2_yo0wg")]
 
@@ -308,7 +226,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="4" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(32, 160)
+position = Vector2(0, 32)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/4" instance=ExtResource("2_yo0wg")]
 
@@ -318,87 +236,29 @@ texture = SubResource("GradientTexture2D_d26v2")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="5" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(32, 224)
-scale = Vector2(1, 2)
-
-[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/5" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/5"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="6" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(96, 256)
-scale = Vector2(1, 2)
-
-[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/6" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/6"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="7" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(0, 320)
-scale = Vector2(3, 1)
-
-[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/7" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/7"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="8" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(128, 352)
-
-[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/8" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/8"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="9" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(32, 384)
-
-[node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/9" instance=ExtResource("2_yo0wg")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/9"]
-position = Vector2(16, 16)
-texture = SubResource("GradientTexture2D_d26v2")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
 [node name="Interactif" type="Node2D" parent="Right/RightArea/Tiles"]
 
-[node name="RightPlayer" parent="Right/RightArea" instance=ExtResource("6_6tuhd")]
-position = Vector2(64, 384)
+[node name="RightPlayer" parent="Right/RightArea" instance=ExtResource("1_yupli")]
+position = Vector2(128, 224)
 
 [node name="Wall" type="Node2D" parent="Right/RightArea"]
 
 [node name="Left" parent="Right/RightArea/Wall" instance=ExtResource("2_yo0wg")]
 position = Vector2(-32, 0)
-scale = Vector2(1, 13)
+scale = Vector2(1, 8)
 
 [node name="Right" parent="Right/RightArea/Wall" instance=ExtResource("2_yo0wg")]
-position = Vector2(160, 0)
-scale = Vector2(1, 13)
+position = Vector2(256, 0)
+scale = Vector2(1, 8)
 
 [node name="Up" parent="Right/RightArea/Wall" instance=ExtResource("2_yo0wg")]
 position = Vector2(0, -32)
-scale = Vector2(5, 1)
+scale = Vector2(8, 1)
 
 [node name="Down" parent="Right/RightArea/Wall" instance=ExtResource("2_yo0wg")]
-position = Vector2(0, 416)
-scale = Vector2(5, 1)
+position = Vector2(0, 256)
+scale = Vector2(8, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(1.5, 1.5)

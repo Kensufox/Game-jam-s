@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=18 format=4 uid="uid://ds7i3i4g45813"]
 
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="1_1n1mg"]
+[ext_resource type="Texture2D" uid="uid://be8fwv010jajl" path="res://asset/map/grass_texture_32x32.png" id="1_5gcvq"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_61sn5"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_5m3tn"]
@@ -14,11 +15,26 @@
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m7pgx"]
 gradient = SubResource("Gradient_5gcvq")
 
-[sub_resource type="Gradient" id="Gradient_fgvsu"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilpm5"]
+texture = ExtResource("1_5gcvq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fgvsu"]
-gradient = SubResource("Gradient_fgvsu")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujvjc"]
+texture = ExtResource("4_1n1mg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qhly"]
+texture = ExtResource("8_tnqst")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tyjj6"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_ilpm5")
+sources/3 = SubResource("TileSetAtlasSource_ujvjc")
+sources/4 = SubResource("TileSetAtlasSource_4qhly")
 
 [sub_resource type="Gradient" id="Gradient_tnqst"]
 colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
@@ -41,17 +57,13 @@ region_rect = Rect2(0, 0, 64, 512)
 [node name="LeftArea" type="Node2D" parent="Left"]
 position = Vector2(256, 192)
 
-[node name="Background" type="Sprite2D" parent="Left/LeftArea"]
-position = Vector2(128, 112)
-texture = SubResource("GradientTexture2D_fgvsu")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 224)
+[node name="Background" type="TileMapLayer" parent="Left/LeftArea"]
+texture_repeat = 1
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAABAAYAAgAAAAAAAAACAAYAAgAAAAAAAAADAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAAFAAYAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAADAAUAAgAAAAAAAAACAAUAAgAAAAAAAAABAAUAAgAAAAAAAAABAAQAAgAAAAAAAAACAAQAAgAAAAAAAAADAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAAFAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAADAAMAAgAAAAAAAAACAAMAAgAAAAAAAAABAAMAAgAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_tyjj6")
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("1_1n1mg")]
 position = Vector2(128, 0)
-
-[node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_fksmy")]
-position = Vector2(96, 192)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
@@ -84,6 +96,9 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="Interatif" type="Node2D" parent="Left/LeftArea/Tiles"]
 position = Vector2(96, 64)
 
+[node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_fksmy")]
+position = Vector2(96, 192)
+
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
 [node name="Left" parent="Left/LeftArea/Wall" instance=ExtResource("5_rxcfj")]
@@ -107,17 +122,12 @@ scale = Vector2(8, 1)
 [node name="LeftArea" type="Node2D" parent="Right"]
 position = Vector2(640, 192)
 
-[node name="Background" type="Sprite2D" parent="Right/LeftArea"]
-position = Vector2(128, 112)
-texture = SubResource("GradientTexture2D_fgvsu")
-region_enabled = true
-region_rect = Rect2(0, 0, 256, 224)
+[node name="Background" type="TileMapLayer" parent="Right/LeftArea"]
+texture_filter = 1
+tile_set = SubResource("TileSet_tyjj6")
 
 [node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
 position = Vector2(128, 0)
-
-[node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
-position = Vector2(128, 192)
 
 [node name="Tiles" type="Node2D" parent="Right/LeftArea"]
 
@@ -148,6 +158,9 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Interatif" type="Node2D" parent="Right/LeftArea/Tiles"]
+
+[node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
+position = Vector2(128, 192)
 
 [node name="Wall" type="Node2D" parent="Right/LeftArea"]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://d4h0rpix5a4ie"]
+[gd_scene load_steps=24 format=4 uid="uid://d4h0rpix5a4ie"]
 
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_3yu3w"]
+[ext_resource type="Texture2D" uid="uid://be8fwv010jajl" path="res://asset/map/grass_texture_32x32.png" id="1_ycqr8"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_14asd"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="3_bqgpp"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="4_3lrts"]
@@ -11,31 +12,46 @@
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="9_ycqr8"]
 [ext_resource type="Texture2D" uid="uid://bbf56p4crsml7" path="res://asset/map/lava_texture_32x32.png" id="10_f5amq"]
 
-[sub_resource type="Gradient" id="Gradient_1n1mg"]
+[sub_resource type="Gradient" id="Gradient_ycqr8"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_avi3i"]
-gradient = SubResource("Gradient_1n1mg")
+gradient = SubResource("Gradient_ycqr8")
 
-[sub_resource type="Gradient" id="Gradient_rxcfj"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hrupw"]
+texture = ExtResource("1_ycqr8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_hrupw"]
-gradient = SubResource("Gradient_rxcfj")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70lai"]
+texture = ExtResource("8_f5amq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
-[sub_resource type="Gradient" id="Gradient_fgvsu"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqnfy"]
+texture = ExtResource("10_f5amq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_33sd5"]
+tile_size = Vector2i(32, 32)
+sources/2 = SubResource("TileSetAtlasSource_hrupw")
+sources/3 = SubResource("TileSetAtlasSource_70lai")
+sources/4 = SubResource("TileSetAtlasSource_qqnfy")
+
+[sub_resource type="Gradient" id="Gradient_33sd5"]
 colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_70lai"]
-gradient = SubResource("Gradient_fgvsu")
+gradient = SubResource("Gradient_33sd5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1pw6"]
 size = Vector2(32, 32)
 
-[sub_resource type="Gradient" id="Gradient_hkhlw"]
+[sub_resource type="Gradient" id="Gradient_nxsv8"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_wl0ig"]
-gradient = SubResource("Gradient_hkhlw")
+gradient = SubResource("Gradient_nxsv8")
 width = 32
 height = 32
 
@@ -57,17 +73,13 @@ region_rect = Rect2(0, 0, 64, 512)
 [node name="LeftArea" type="Node2D" parent="Left"]
 position = Vector2(224, 192)
 
-[node name="Background" type="Sprite2D" parent="Left/LeftArea"]
-position = Vector2(144, 128)
-texture = SubResource("GradientTexture2D_hrupw")
-region_enabled = true
-region_rect = Rect2(0, 0, 288, 256)
+[node name="Background" type="TileMapLayer" parent="Left/LeftArea"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAIAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAACAAYAAgAAAAAAAAACAAUAAgAAAAAAAAACAAQAAgAAAAAAAAACAAMAAgAAAAAAAAACAAIAAwAAAAAAAAADAAIAAgAAAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAEAAYAAgAAAAAAAAAEAAUAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAFAAMAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAYAAgAAAAAAAAAGAAUAAgAAAAAAAAAGAAQAAgAAAAAAAAAGAAMAAgAAAAAAAAAGAAIAAgAAAAAAAAAHAAIAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAQAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAYAAgAAAAAAAAAIAAUAAgAAAAAAAAAIAAQAAgAAAAAAAAAIAAMAAgAAAAAAAAAIAAIAAgAAAAAAAAAGAAcAAgAAAAAAAAAEAAMAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_33sd5")
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("4_3lrts")]
 position = Vector2(128, 0)
-
-[node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_3yu3w")]
-position = Vector2(128, 224)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
@@ -182,6 +194,9 @@ script = ExtResource("7_f5amq")
 [node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Link1/Bridge"]
 shape = SubResource("RectangleShape2D_4ls5l")
 
+[node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_3yu3w")]
+position = Vector2(128, 224)
+
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
 [node name="Left" parent="Left/LeftArea/Wall" instance=ExtResource("9_ycqr8")]
@@ -205,17 +220,13 @@ scale = Vector2(9, 1)
 [node name="RightArea" type="Node2D" parent="Right"]
 position = Vector2(640, 192)
 
-[node name="Background" type="Sprite2D" parent="Right/RightArea"]
-position = Vector2(144, 128)
-texture = SubResource("GradientTexture2D_hrupw")
-region_enabled = true
-region_rect = Rect2(0, 0, 288, 256)
+[node name="Background" type="TileMapLayer" parent="Right/RightArea"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAAIABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_33sd5")
 
 [node name="ExitRight" parent="Right/RightArea" instance=ExtResource("3_bqgpp")]
 position = Vector2(128, 0)
-
-[node name="RightPlayer" parent="Right/RightArea" instance=ExtResource("2_14asd")]
-position = Vector2(128, 224)
 
 [node name="Tiles" type="Node2D" parent="Right/RightArea"]
 
@@ -318,6 +329,9 @@ script = ExtResource("7_f5amq")
 [node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Link1/Bridge"]
 shape = SubResource("RectangleShape2D_4ls5l")
 disabled = true
+
+[node name="RightPlayer" parent="Right/RightArea" instance=ExtResource("2_14asd")]
+position = Vector2(128, 224)
 
 [node name="Wall" type="Node2D" parent="Right/RightArea"]
 
