@@ -17,8 +17,5 @@ func redirection():
 		get_tree().change_scene_to_file("res://level/scene/LevelThree.tscn")
 		reset()
 	if zone_droite and zone_gauche and cpt == 3:  
-		get_tree().change_scene_to_file("res://level/scene/LevelThree.tscn")
-		reset()
-	if zone_droite and zone_gauche and cpt == 4:  
-		get_tree().change_scene_to_file("res://level/scene/LevelThree.tscn")
+		get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
 		reset()
