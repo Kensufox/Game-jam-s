@@ -50,11 +50,11 @@ texture = SubResource("GradientTexture2D_fgvsu")
 region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
+[node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("1_1n1mg")]
+position = Vector2(128, 0)
+
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_fksmy")]
 position = Vector2(96, 192)
-
-[node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("1_1n1mg")]
-position = Vector2(112, 0)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
@@ -112,11 +112,11 @@ texture = SubResource("GradientTexture2D_fgvsu")
 region_enabled = true
 region_rect = Rect2(0, 0, 256, 224)
 
+[node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
+position = Vector2(128, 0)
+
 [node name="RightPlayer" parent="Right/LeftArea" instance=ExtResource("2_5m3tn")]
 position = Vector2(128, 192)
-
-[node name="ExitRight" parent="Right/LeftArea" instance=ExtResource("1_61sn5")]
-position = Vector2(112, 0)
 
 [node name="Tiles" type="Node2D" parent="Right/LeftArea"]
 
