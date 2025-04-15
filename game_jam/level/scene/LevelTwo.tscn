@@ -317,7 +317,6 @@ collision_mask = 2
 script = ExtResource("7_f5amq")
 
 [node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Link1/Bridge"]
-position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_4ls5l")
 
 [node name="Wall" type="Node2D" parent="Right/RightArea"]

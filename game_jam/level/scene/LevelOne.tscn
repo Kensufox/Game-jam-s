@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_5m3tn"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_5m3tn"]
-[ext_resource type="Texture2D" uid="uid://ctyead6tjha3e" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
+[ext_resource type="Texture2D" uid="uid://cu3v47kqvtmwu" path="res://asset/map/water_texture_32x32.png" id="4_1n1mg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="5_rxcfj"]
-[ext_resource type="Texture2D" uid="uid://b6hd81n8pym67" path="res://asset/map/lava_texture_32x32.png" id="8_tnqst"]
+[ext_resource type="Texture2D" uid="uid://bbf56p4crsml7" path="res://asset/map/lava_texture_32x32.png" id="8_tnqst"]
 
 [sub_resource type="Gradient" id="Gradient_5gcvq"]
 
@@ -27,10 +27,6 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
 gradient = SubResource("Gradient_tnqst")
 
 [node name="LevelOne" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 320)
-zoom = Vector2(1.5, 1.5)
 
 [node name="Slit" type="Node2D" parent="."]
 
@@ -170,3 +166,7 @@ scale = Vector2(8, 1)
 [node name="Down" parent="Right/LeftArea/Wall" instance=ExtResource("5_rxcfj")]
 position = Vector2(0, 224)
 scale = Vector2(8, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 320)
+zoom = Vector2(1.5, 1.5)
