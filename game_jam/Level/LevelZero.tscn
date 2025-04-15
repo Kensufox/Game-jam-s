@@ -1,10 +1,13 @@
-[gd_scene load_steps=16 format=4 uid="uid://dw4uhijylmeh1"]
+[gd_scene load_steps=22 format=4 uid="uid://dw4uhijylmeh1"]
 
+[ext_resource type="Texture2D" uid="uid://d0umu2ajv82le" path="res://asset/map/border_lava_rock_64x32.png" id="1_2rn7e"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
+[ext_resource type="Texture2D" uid="uid://beqtw5ivuy2p" path="res://asset/map/border_water_grass_64x32.png" id="2_djje8"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
 [ext_resource type="Texture2D" uid="uid://n6t4qasi0vk0" path="res://asset/map/water_texture_32x32.png" id="4_0jsfo"]
+[ext_resource type="Texture2D" uid="uid://bu74c2co7hbjf" path="res://asset/map/rock_texture_32x32.png" id="6_6w2bw"]
 [ext_resource type="Texture2D" uid="uid://mukabgisye5i" path="res://asset/map/grass_texture_32x32.png" id="7_6h4ix"]
 [ext_resource type="Texture2D" uid="uid://b0tt83jsnk1fo" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
 
@@ -12,6 +15,18 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fk17i"]
 gradient = SubResource("Gradient_1n1mg")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cj30g"]
+texture = ExtResource("1_2rn7e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kb657"]
+texture = ExtResource("2_djje8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_llx1p"]
 texture = ExtResource("7_6h4ix")
@@ -28,11 +43,19 @@ texture = ExtResource("8_mxo8o")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhqtk"]
+texture = ExtResource("6_6w2bw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_ticer"]
 tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_llx1p")
 sources/3 = SubResource("TileSetAtlasSource_kwu0n")
 sources/4 = SubResource("TileSetAtlasSource_owcj6")
+sources/0 = SubResource("TileSetAtlasSource_cj30g")
+sources/1 = SubResource("TileSetAtlasSource_kb657")
+sources/5 = SubResource("TileSetAtlasSource_jhqtk")
 
 [sub_resource type="Gradient" id="Gradient_fgvsu"]
 colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
@@ -57,7 +80,7 @@ position = Vector2(256, 192)
 
 [node name="Background" type="TileMapLayer" parent="Left/LeftArea"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAFAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAADAAYAAgAAAAAAAAACAAYAAgAAAAAAAAABAAYAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAADAAQAAgAAAAAAAAACAAQAAgAAAAAAAAABAAQAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAAFAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAABAAIAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAADAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAHAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAADAAAAAgAAAAAAAAACAAAAAgAAAAAAAAABAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcAAgAAAAAAAAABAAcAAgAAAAAAAAACAAcAAgAAAAAAAAADAAcAAgAAAAAAAAAEAAcAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAcAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAAYAAgAAAAAAAAAHAAcAAgAAAAAAAAAFAAYAAgAAAAAAAAAEAAYAAgAAAAAAAAADAAYAAgAAAAAAAAACAAYAAgAAAAAAAAABAAYAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAABAAUAAgAAAAAAAAACAAUAAgAAAAAAAAADAAUAAgAAAAAAAAAEAAUAAgAAAAAAAAAFAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAAHAAQAAgAAAAAAAAAGAAQAAgAAAAAAAAAFAAQAAgAAAAAAAAAEAAQAAgAAAAAAAAADAAQAAgAAAAAAAAACAAQAAgAAAAAAAAABAAQAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAABAAMAAgAAAAAAAAACAAMAAgAAAAAAAAADAAMAAgAAAAAAAAAEAAMAAgAAAAAAAAAFAAMAAgAAAAAAAAAGAAMAAgAAAAAAAAAHAAMAAgAAAAAAAAAHAAIAAgAAAAAAAAAGAAIAAgAAAAAAAAAFAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAABAAIAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAADAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAAFAAEAAwAAAAAAAAAGAAEAAwAAAAAAAAAHAAEAAwAAAAAAAAAHAAAAAQAAAAAAAAAGAAAAAQABAAAAAAAFAAAAAQAAAAAAAAAEAAAAAgAAAAAAAAADAAAAAgAAAAAAAAACAAAAAgAAAAAAAAABAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_ticer")
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("2_yol54")]
@@ -70,14 +93,6 @@ position = Vector2(64, 0)
 [node name="Hitbox" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("3_b5i5v")]
 position = Vector2(160, 0)
 scale = Vector2(3, 2)
-
-[node name="WaterTexture" type="Sprite2D" parent="Left/LeftArea/Tiles/Water"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(208, 32)
-texture = ExtResource("4_0jsfo")
-region_enabled = true
-region_rect = Rect2(0, 0, 96, 64)
 
 [node name="Obstacle" type="Node2D" parent="Left/LeftArea/Tiles"]
 
@@ -158,6 +173,7 @@ position = Vector2(640, 192)
 
 [node name="Background" type="TileMapLayer" parent="Right/RightArea"]
 texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAcABQAAAAAAAAABAAcABQAAAAAAAAACAAcABQAAAAAAAAADAAcABQAAAAAAAAAEAAcABQAAAAAAAAAFAAcABQAAAAAAAAAGAAcABQAAAAAAAAAHAAcABQAAAAAAAAAHAAYABQAAAAAAAAAGAAYABQAAAAAAAAAFAAYABQAAAAAAAAAEAAYABQAAAAAAAAADAAYABQAAAAAAAAACAAYABQAAAAAAAAABAAYABQAAAAAAAAAAAAYABQAAAAAAAAAAAAUABQAAAAAAAAABAAUABQAAAAAAAAACAAUABQAAAAAAAAADAAUABQAAAAAAAAAEAAUABQAAAAAAAAAFAAUABQAAAAAAAAAGAAUABQAAAAAAAAAHAAUABQAAAAAAAAAHAAQABQAAAAAAAAAGAAQABQAAAAAAAAAFAAQABQAAAAAAAAAEAAQABQAAAAAAAAADAAQABQAAAAAAAAACAAQABQAAAAAAAAABAAQABQAAAAAAAAAAAAQABQAAAAAAAAAAAAMABQAAAAAAAAABAAMABQAAAAAAAAACAAMABQAAAAAAAAADAAMABQAAAAAAAAAEAAMABQAAAAAAAAAFAAMABQAAAAAAAAAGAAMABQAAAAAAAAAGAAIABQAAAAAAAAAHAAIABQAAAAAAAAAHAAMABQAAAAAAAAAFAAIABQAAAAAAAAAEAAIABQAAAAAAAAAEAAEABQAAAAAAAAAEAAAABQAAAAAAAAADAAAABQAAAAAAAAADAAEABQAAAAAAAAADAAIABQAAAAAAAAACAAIABQAAAAAAAAACAAEABQAAAAAAAAACAAAABQAAAAAAAAABAAAABQAAAAAAAAABAAEABQAAAAAAAAABAAIABQAAAAAAAAAAAAEABQAAAAAAAAAAAAAABQAAAAAAAAAAAAIABQAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAABAAAAAAAHAAAAAAAAAAAAAAAHAAEABAAAAAAAAAAGAAEABAAAAAAAAAAFAAEABAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ticer")
 
 [node name="ExitRight" parent="Right/RightArea" instance=ExtResource("2_yol54")]
@@ -170,14 +186,6 @@ position = Vector2(64, 0)
 [node name="Hitbox" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("3_b5i5v")]
 position = Vector2(160, 0)
 scale = Vector2(3, 2)
-
-[node name="WaterTexture" type="Sprite2D" parent="Right/RightArea/Tiles/Lava"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(208, 32)
-texture = ExtResource("8_mxo8o")
-region_enabled = true
-region_rect = Rect2(0, 0, 96, 64)
 
 [node name="Obstacle" type="Node2D" parent="Right/RightArea/Tiles"]
 
