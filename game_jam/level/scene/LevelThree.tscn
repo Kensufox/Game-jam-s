@@ -1,13 +1,13 @@
 [gd_scene load_steps=19 format=4 uid="uid://cif038n6buer6"]
 
-[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://level/scripts/timer.gd" id="1_mxo8o"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_ql7ep"]
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
+[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://Level/scripts/timer.gd" id="1_mxo8o"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/scene/ExitRight.tscn" id="1_ql7ep"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_yupli"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/scene/ExitLeft.tscn" id="2_yol54"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/scene/restartZone.tscn" id="3_b5i5v"]
 [ext_resource type="Texture2D" uid="uid://cu3v47kqvtmwu" path="res://asset/map/water_texture_32x32.png" id="4_0jsfo"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="6_6tuhd"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="6_6tuhd"]
 [ext_resource type="Texture2D" uid="uid://be8fwv010jajl" path="res://asset/map/grass_texture_32x32.png" id="7_6h4ix"]
 [ext_resource type="Texture2D" uid="uid://bbf56p4crsml7" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
 
@@ -44,13 +44,6 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
 gradient = SubResource("Gradient_fgvsu")
 
 [node name="LevelThree" type="Node2D"]
-
-[node name="TimerLabel" type="Label" parent="."]
-offset_left = 96.0
-offset_top = 440.0
-offset_right = 384.0
-offset_bottom = 463.0
-script = ExtResource("1_mxo8o")
 
 [node name="Slit" type="Node2D" parent="."]
 
@@ -398,6 +391,13 @@ scale = Vector2(5, 1)
 [node name="Down" parent="Right/RightArea/Wall" instance=ExtResource("2_yo0wg")]
 position = Vector2(0, 416)
 scale = Vector2(5, 1)
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 481.0
+offset_top = 195.0
+offset_right = 671.0
+offset_bottom = 218.0
+script = ExtResource("1_mxo8o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)

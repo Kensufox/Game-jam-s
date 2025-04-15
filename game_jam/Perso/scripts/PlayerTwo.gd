@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		elif direction.y != 0:
 			direction.x = 0
 			
-		if VariableGlobale.invert_controls_left:
+		if VariableGlobale.invert_controls_right:
 			direction *= -1
 
 		if direction != Vector2.ZERO:

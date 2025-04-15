@@ -4,6 +4,9 @@ var zone_gauche := false
 var zone_droite := false
 var cpt := 1
 
+var invert_controls_left = false
+var invert_controls_right = false
+
 func reset():
 		var zone_gauche := false
 		var zone_droite := false
