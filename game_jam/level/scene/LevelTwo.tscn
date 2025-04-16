@@ -237,31 +237,29 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Interactif" type="Node2D" parent="Left/LeftArea/Tiles"]
 
-[node name="Link1" type="Node" parent="Left/LeftArea/Tiles/Interactif"]
-
-[node name="PressurePlate" type="Area2D" parent="Left/LeftArea/Tiles/Interactif/Link1"]
-position = Vector2(448, 384)
+[node name="PressurePlate" type="Area2D" parent="Left/LeftArea/Tiles/Interactif"]
+position = Vector2(224, 192)
 collision_mask = 2
 script = ExtResource("6_hkhlw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Link1/PressurePlate"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlate"]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Link1/PressurePlate"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlate"]
 texture_filter = 1
 position = Vector2(16, 16)
 texture = ExtResource("11_ow6w0")
 
-[node name="Bridge" type="Area2D" parent="Left/LeftArea/Tiles/Interactif/Link1"]
-position = Vector2(304, 272)
+[node name="Bridge" type="Area2D" parent="Left/LeftArea/Tiles/Interactif"]
+position = Vector2(80, 80)
 collision_mask = 2
 script = ExtResource("7_f5amq")
 
-[node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Link1/Bridge"]
+[node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Bridge"]
 shape = SubResource("RectangleShape2D_4ls5l")
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Link1/Bridge"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Bridge"]
 texture_filter = 1
 texture = ExtResource("12_nxsv8")
 
@@ -347,32 +345,30 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Interactif" type="Node2D" parent="Right/RightArea/Tiles"]
 
-[node name="Link1" type="Node" parent="Right/RightArea/Tiles/Interactif"]
-
-[node name="PressurePlate" type="Area2D" parent="Right/RightArea/Tiles/Interactif/Link1"]
-position = Vector2(864, 384)
+[node name="PressurePlate" type="Area2D" parent="Right/RightArea/Tiles/Interactif"]
+position = Vector2(224, 192)
 collision_mask = 2
 script = ExtResource("6_hkhlw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Link1/PressurePlate"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/PressurePlate"]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Interactif/Link1/PressurePlate"]
+[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Interactif/PressurePlate"]
 texture_filter = 1
 position = Vector2(16, 16)
 texture = ExtResource("11_ow6w0")
 
-[node name="Bridge" type="Area2D" parent="Right/RightArea/Tiles/Interactif/Link1"]
-position = Vector2(720, 272)
+[node name="Bridge" type="Area2D" parent="Right/RightArea/Tiles/Interactif"]
+position = Vector2(80, 80)
 collision_mask = 2
 script = ExtResource("7_f5amq")
 
-[node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Link1/Bridge"]
+[node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Bridge"]
 shape = SubResource("RectangleShape2D_4ls5l")
 disabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Interactif/Link1/Bridge"]
+[node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Interactif/Bridge"]
 texture_filter = 1
 texture = ExtResource("15_ow6w0")
 
@@ -402,9 +398,9 @@ scale = Vector2(9, 1)
 position = Vector2(576, 320)
 zoom = Vector2(1.5, 1.5)
 
-[connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/Link1/PressurePlate" to="Left/LeftArea/Tiles/Interactif/Link1/PressurePlate" method="_on_body_entered"]
-[connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/Link1/PressurePlate" to="Left/LeftArea/Tiles/Interactif/Link1/PressurePlate" method="_on_body_exited"]
-[connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/Link1/Bridge" to="Left/LeftArea/Tiles/Interactif/Link1/Bridge" method="_on_body_entered"]
-[connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/Link1/PressurePlate" to="Right/RightArea/Tiles/Interactif/Link1/PressurePlate" method="_on_body_entered"]
-[connection signal="body_exited" from="Right/RightArea/Tiles/Interactif/Link1/PressurePlate" to="Right/RightArea/Tiles/Interactif/Link1/PressurePlate" method="_on_body_exited"]
-[connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/Link1/Bridge" to="Right/RightArea/Tiles/Interactif/Link1/Bridge" method="_on_body_entered"]
+[connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/PressurePlate" to="Left/LeftArea/Tiles/Interactif/PressurePlate" method="_on_body_entered"]
+[connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/PressurePlate" to="Left/LeftArea/Tiles/Interactif/PressurePlate" method="_on_body_exited"]
+[connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/Bridge" to="Left/LeftArea/Tiles/Interactif/Bridge" method="_on_body_entered"]
+[connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/PressurePlate" to="Right/RightArea/Tiles/Interactif/PressurePlate" method="_on_body_entered"]
+[connection signal="body_exited" from="Right/RightArea/Tiles/Interactif/PressurePlate" to="Right/RightArea/Tiles/Interactif/PressurePlate" method="_on_body_exited"]
+[connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/Bridge" to="Right/RightArea/Tiles/Interactif/Bridge" method="_on_body_entered"]
