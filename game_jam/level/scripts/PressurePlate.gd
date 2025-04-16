@@ -5,6 +5,7 @@ extends Node
 @onready var leftsprite: Sprite2D  = $"../../../../../Left/LeftArea/Tiles/Interactif/Bridge/Sprite2D"
 @onready var rightsprite: Sprite2D = $"../../../../../Right/RightArea/Tiles/Interactif/Bridge/Sprite2D"
 
+
 func _on_body_entered(body: Node2D) -> void:
 	leftbridge.set_deferred("disabled", true)
 	rightbridge.set_deferred("disabled", false)

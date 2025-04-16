@@ -256,7 +256,7 @@ script = ExtResource("6_hkhlw")
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="sprite" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlate"]
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlate"]
 texture_filter = 1
 position = Vector2(16, 16)
 texture = ExtResource("11_ow6w0")
