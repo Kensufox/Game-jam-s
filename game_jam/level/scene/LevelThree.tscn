@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://cif038n6buer6"]
+[gd_scene load_steps=34 format=4 uid="uid://cif038n6buer6"]
 
 [ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://Level/scripts/timer.gd" id="1_mxo8o"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_ql7ep"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b0tt83jsnk1fo" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://asset/map/rock_texture_64x32.png" id="9_kwu0n"]
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://asset/map/wall_border_tileset.png" id="10_owcj6"]
+[ext_resource type="Script" uid="uid://dnubswnsjt7mw" path="res://Level/scripts/TickManager.gd" id="18_ticer"]
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
 
@@ -485,3 +486,6 @@ script = ExtResource("1_mxo8o")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
 zoom = Vector2(1.2, 1.2)
+
+[node name="TickManager" type="Node" parent="."]
+script = ExtResource("18_ticer")

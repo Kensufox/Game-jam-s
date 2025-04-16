@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://d4h0rpix5a4ie"]
+[gd_scene load_steps=40 format=4 uid="uid://d4h0rpix5a4ie"]
 
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_3yu3w"]
 [ext_resource type="Texture2D" uid="uid://d0umu2ajv82le" path="res://asset/map/border_lava_rock_64x32.png" id="1_qqnfy"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bc1vi5v5rm4ao" path="res://asset/element/blank_button_32x32.png" id="11_ow6w0"]
 [ext_resource type="Texture2D" uid="uid://cqq5cjggejif0" path="res://asset/element/wood_bridge_ghost_32x32.png" id="12_nxsv8"]
 [ext_resource type="Texture2D" uid="uid://s771soltpsnu" path="res://asset/element/wood_bridge_32x32.png" id="15_ow6w0"]
+[ext_resource type="Script" uid="uid://dnubswnsjt7mw" path="res://Level/scripts/TickManager.gd" id="22_bk3c5"]
 
 [sub_resource type="Gradient" id="Gradient_ycqr8"]
 
@@ -407,6 +408,9 @@ scale = Vector2(9, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
 zoom = Vector2(1.5, 1.5)
+
+[node name="TickManager" type="Node" parent="."]
+script = ExtResource("22_bk3c5")
 
 [connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/PressurePlate" to="Left/LeftArea/Tiles/Interactif/PressurePlate" method="_on_body_entered"]
 [connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/PressurePlate" to="Left/LeftArea/Tiles/Interactif/PressurePlate" method="_on_body_exited"]

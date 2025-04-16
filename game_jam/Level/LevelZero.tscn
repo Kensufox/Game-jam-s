@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dw4uhijylmeh1"]
+[gd_scene load_steps=31 format=4 uid="uid://dw4uhijylmeh1"]
 
 [ext_resource type="Texture2D" uid="uid://d0umu2ajv82le" path="res://asset/map/border_lava_rock_64x32.png" id="1_2rn7e"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0tt83jsnk1fo" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://asset/map/rock_texture_64x32.png" id="9_cj30g"]
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://asset/map/wall_border_tileset.png" id="10_kb657"]
+[ext_resource type="Script" uid="uid://dnubswnsjt7mw" path="res://Level/scripts/TickManager.gd" id="15_jhqtk"]
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
 
@@ -350,3 +351,6 @@ scale = Vector2(8, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
 zoom = Vector2(1.5, 1.5)
+
+[node name="TickManager" type="Node" parent="."]
+script = ExtResource("15_jhqtk")
