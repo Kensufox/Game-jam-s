@@ -11,6 +11,8 @@ func _on_body_entered(body: Node) -> void:
 		bodies_inside.append(body)
 	await get_tree().create_timer(0.1).timeout
 	if bodies_inside.size() != 0:
+		VariableGlobale.invert_controls_left = false
+		VariableGlobale.invert_controls_right = false
 		get_tree().reload_current_scene()
 
 func _on_body_exited(body: Node) -> void:

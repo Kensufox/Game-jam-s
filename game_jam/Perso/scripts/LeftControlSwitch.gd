@@ -1,6 +1,10 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	print("test")
 	VariableGlobale.invert_controls_left = not VariableGlobale.invert_controls_left
-	$CollisionShape2D.set_deferred("disabled", true)
+	$sprite.texture = load("res://asset/map/rotate_button_pressed_32x32.png")
+
+
+func _on_body_exited(body: Node2D) -> void:
+	$sprite.texture = load("res://asset/map/rotate_button_32x32.png")
+	#$CollisionShape2D.set_deferred("disabled", true)

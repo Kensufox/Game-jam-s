@@ -1,16 +1,16 @@
 [gd_scene load_steps=39 format=4 uid="uid://d4h0rpix5a4ie"]
 
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_3yu3w"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_3yu3w"]
 [ext_resource type="Texture2D" uid="uid://d0umu2ajv82le" path="res://asset/map/border_lava_rock_64x32.png" id="1_qqnfy"]
 [ext_resource type="Texture2D" uid="uid://mukabgisye5i" path="res://asset/map/grass_texture_32x32.png" id="1_ycqr8"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_14asd"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="3_bqgpp"]
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="4_3lrts"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="2_14asd"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/scene/ExitRight.tscn" id="3_bqgpp"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/scene/ExitLeft.tscn" id="4_3lrts"]
 [ext_resource type="Texture2D" uid="uid://bu74c2co7hbjf" path="res://asset/map/rock_texture_32x32.png" id="6_33sd5"]
 [ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://Level/scripts/PressurePlate.gd" id="6_hkhlw"]
 [ext_resource type="Texture2D" uid="uid://beqtw5ivuy2p" path="res://asset/map/border_water_grass_64x32.png" id="6_hrupw"]
 [ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://Level/scripts/RestartZone.gd" id="7_f5amq"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="7_m755j"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/scene/restartZone.tscn" id="7_m755j"]
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://asset/map/border_water_grass_tileset.png" id="7_nr2uk"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://asset/map/border_lava_rock_tileset.png" id="8_3w42o"]
 [ext_resource type="Texture2D" uid="uid://n6t4qasi0vk0" path="res://asset/map/water_texture_32x32.png" id="8_f5amq"]
@@ -256,7 +256,7 @@ script = ExtResource("6_hkhlw")
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_n1pw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlate"]
+[node name="sprite" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/PressurePlate"]
 texture_filter = 1
 position = Vector2(16, 16)
 texture = ExtResource("11_ow6w0")
