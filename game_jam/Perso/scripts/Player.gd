@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var time_since_move := 0.0
-var move_cooldown := 0.2
+var move_cooldown := 0.1
 
 func _physics_process(delta: float) -> void:
 	time_since_move += delta
