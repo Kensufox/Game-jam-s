@@ -18,4 +18,3 @@ config/icon="res://icon.svg"
 [autoload]
 
 VariableGlobale="*res://VariableGlobale.gd"
-TickManager="*res://Level/scripts/TickManager.gd"
