@@ -1,20 +1,14 @@
-[gd_scene load_steps=33 format=4 uid="uid://cif038n6buer6"]
+[gd_scene load_steps=21 format=4 uid="uid://cif038n6buer6"]
 
 [ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://Level/scripts/timer.gd" id="1_mxo8o"]
-[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/scene/ExitRight.tscn" id="1_ql7ep"]
-[ext_resource type="Texture2D" uid="uid://d0umu2ajv82le" path="res://asset/map/border_lava_rock_64x32.png" id="1_rflj1"]
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="1_yupli"]
-[ext_resource type="Texture2D" uid="uid://beqtw5ivuy2p" path="res://asset/map/border_water_grass_64x32.png" id="2_fk17i"]
+[ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_ql7ep"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/scene/ExitLeft.tscn" id="2_yol54"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/scene/restartZone.tscn" id="3_b5i5v"]
-[ext_resource type="Texture2D" uid="uid://n6t4qasi0vk0" path="res://asset/map/water_texture_32x32.png" id="4_0jsfo"]
-[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/scene/PlayerTwo.tscn" id="6_6tuhd"]
-[ext_resource type="Texture2D" uid="uid://bu74c2co7hbjf" path="res://asset/map/rock_texture_32x32.png" id="6_llx1p"]
-[ext_resource type="Texture2D" uid="uid://mukabgisye5i" path="res://asset/map/grass_texture_32x32.png" id="7_6h4ix"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
+[ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="6_6tuhd"]
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://asset/map/border_water_grass_tileset.png" id="7_fk17i"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://asset/map/border_lava_rock_tileset.png" id="8_llx1p"]
-[ext_resource type="Texture2D" uid="uid://b0tt83jsnk1fo" path="res://asset/map/lava_texture_32x32.png" id="8_mxo8o"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://asset/map/rock_texture_64x32.png" id="9_kwu0n"]
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://asset/map/wall_border_tileset.png" id="10_owcj6"]
 
@@ -22,38 +16,6 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fk17i"]
 gradient = SubResource("Gradient_1n1mg")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ticer"]
-texture = ExtResource("1_rflj1")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d26v2"]
-texture = ExtResource("2_fk17i")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_llx1p"]
-texture = ExtResource("7_6h4ix")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwu0n"]
-texture = ExtResource("4_0jsfo")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owcj6"]
-texture = ExtResource("8_mxo8o")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqfmh"]
-texture = ExtResource("6_llx1p")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lorxt"]
 texture = ExtResource("7_fk17i")
@@ -87,6 +49,25 @@ texture_region_size = Vector2i(32, 32)
 4:0/0 = 0
 4:3/0 = 0
 4:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+7:4/0 = 0
+7:3/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:1/0 = 0
+6:2/0 = 0
+6:4/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+5:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4aube"]
 texture = ExtResource("8_llx1p")
@@ -120,6 +101,25 @@ texture_region_size = Vector2i(32, 32)
 1:5/0 = 0
 2:5/0 = 0
 3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:4/0 = 0
+7:3/0 = 0
+7:2/0 = 0
+7:1/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+4:5/0 = 0
+6:4/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+5:4/0 = 0
+6:2/0 = 0
+6:3/0 = 0
+7:5/0 = 0
+7:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6cfg"]
 texture = ExtResource("9_kwu0n")
@@ -137,12 +137,6 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_ticer"]
 tile_size = Vector2i(32, 32)
-sources/2 = SubResource("TileSetAtlasSource_llx1p")
-sources/3 = SubResource("TileSetAtlasSource_kwu0n")
-sources/4 = SubResource("TileSetAtlasSource_owcj6")
-sources/0 = SubResource("TileSetAtlasSource_ticer")
-sources/1 = SubResource("TileSetAtlasSource_d26v2")
-sources/5 = SubResource("TileSetAtlasSource_uqfmh")
 sources/6 = SubResource("TileSetAtlasSource_lorxt")
 sources/7 = SubResource("TileSetAtlasSource_4aube")
 sources/8 = SubResource("TileSetAtlasSource_k6cfg")
@@ -173,7 +167,7 @@ position = Vector2(288, 128)
 
 [node name="Background" type="TileMapLayer" parent="Left/LeftArea"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAADAAEAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAMABgADAAAAAAAAAAQAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAgAAgAAAAAAAAAAAAkAAgAAAAAAAAAAAAoAAgAAAAAAAAAAAAsAAgAAAAAAAAAAAAwAAgAAAAAAAAABAAwAAgAAAAAAAAACAAwAAgAAAAAAAAADAAwAAgAAAAAAAAAEAAwAAgAAAAAAAAAEAAsAAgAAAAAAAAAEAAoAAgAAAAAAAAAEAAkAAgAAAAAAAAAEAAgAAgAAAAAAAAAEAAcAAgAAAAAAAAAEAAYABgAEAAAAAAAEAAUAAgAAAAAAAAADAAUAAgAAAAAAAAADAAQAAgAAAAAAAAADAAMABgAEAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAACAAIAAgAAAAAAAAABAAIAAgAAAAAAAAABAAMABgADAAEAAAACAAMABgAEAAEAAAACAAQAAgAAAAAAAAABAAQAAgAAAAAAAAACAAUAAgAAAAAAAAABAAUAAgAAAAAAAAADAAYABgAEAAEAAAACAAYABgADAAEAAAABAAYABgADAAAAAAADAAcAAgAAAAAAAAACAAcAAgAAAAAAAAABAAcAAgAAAAAAAAADAAgAAgAAAAAAAAACAAgAAgAAAAAAAAABAAgAAgAAAAAAAAACAAkAAgAAAAAAAAADAAkAAgAAAAAAAAABAAkAAgAAAAAAAAADAAoAAgAAAAAAAAACAAoAAgAAAAAAAAABAAoAAgAAAAAAAAADAAsAAgAAAAAAAAACAAsAAgAAAAAAAAABAAsAAgAAAAAAAAD//w0ACQABAAEAAAAAAA0ACQABAAEAAAABAA0ACQABAAEAAAACAA0ACQABAAEAAAADAA0ACQABAAEAAAAEAA0ACQABAAEAAAAFAA0ACQABAAEAAAAFAAwACQABAAEAAAAFAAsACQABAAEAAAAFAAoACQABAAEAAAAFAAkACQABAAEAAAAFAAgACQABAAEAAAAFAAcACQABAAEAAAAFAAYACQABAAEAAAAFAAUACQABAAEAAAAFAAQACQABAAEAAAAFAAMACQABAAEAAAAFAAIACQABAAEAAAAFAAEACQABAAEAAAAFAAAACQABAAEAAAAFAP//CQABAAEAAAAEAP//CQABAAAAAAADAP//CQABAAAAAAACAP//CQABAAAAAAABAP//CQABAAAAAAAAAP//CQABAAAAAAD/////CQAAAAAAAAD//wwACQAAAAEAAAD//wsACQAAAAEAAAD//woACQAAAAEAAAD//wkACQAAAAEAAAD//wgACQAAAAEAAAD//wcACQAAAAEAAAD//wYACQAAAAEAAAD//wUACQAAAAEAAAD//wQACQAAAAEAAAD//wMACQAAAAEAAAD//wIACQAAAAEAAAD//wEACQAAAAEAAAD//wAACQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAABgAHAAUAAAABAAAABgAHAAUAAAACAAAABgAHAAUAAAADAAAABgAHAAUAAAAEAAAABgAHAAUAAAAEAAEABgAHAAUAAAADAAEABgAHAAUAAAACAAEABgAHAAUAAAABAAEABgAHAAUAAAAAAAEABgAHAAUAAAAAAAIABgAHAAUAAAAAAAMABgAGAAAAAAAAAAQABgAHAAUAAAAAAAUABgAHAAUAAAAAAAYABgAHAAUAAAAAAAcABgAHAAUAAAAAAAgABgAHAAUAAAAAAAkABgAHAAUAAAAAAAoABgAHAAUAAAAAAAsABgAHAAUAAAAAAAwABgAHAAUAAAABAAwABgAHAAUAAAACAAwABgAHAAUAAAADAAwABgAHAAUAAAAEAAwABgAHAAUAAAAEAAsABgAHAAUAAAAEAAoABgAHAAUAAAAEAAkABgAHAAUAAAAEAAgABgAHAAUAAAAEAAcABgAHAAUAAAAEAAYABgAHAAAAAAAEAAUABgAHAAUAAAADAAUABgAHAAUAAAADAAQABgAHAAUAAAADAAMABgAHAAAAAAADAAIABgAHAAUAAAAEAAIABgAHAAUAAAAEAAMABgAHAAUAAAAEAAQABgAHAAUAAAACAAIABgAHAAUAAAABAAIABgAHAAUAAAABAAMABgAGAAEAAAACAAMABgAHAAEAAAACAAQABgAHAAUAAAABAAQABgAHAAUAAAACAAUABgAHAAUAAAABAAUABgAHAAUAAAADAAYABgAHAAEAAAACAAYABgAGAAEAAAABAAYABgAGAAAAAAADAAcABgAHAAUAAAACAAcABgAHAAUAAAABAAcABgAHAAUAAAADAAgABgAHAAUAAAACAAgABgAHAAUAAAABAAgABgAHAAUAAAACAAkABgAHAAUAAAADAAkABgAHAAUAAAABAAkABgAHAAUAAAADAAoABgAHAAUAAAACAAoABgAHAAUAAAABAAoABgAHAAUAAAADAAsABgAHAAUAAAACAAsABgAHAAUAAAABAAsABgAHAAUAAAD//w0ACQABAAEAAAAAAA0ACQABAAEAAAABAA0ACQABAAEAAAACAA0ACQABAAEAAAADAA0ACQABAAEAAAAEAA0ACQABAAEAAAAFAA0ACQABAAEAAAAFAAwACQABAAEAAAAFAAsACQABAAEAAAAFAAoACQABAAEAAAAFAAkACQABAAEAAAAFAAgACQABAAEAAAAFAAcACQABAAEAAAAFAAYACQABAAEAAAAFAAUACQABAAEAAAAFAAQACQABAAEAAAAFAAMACQABAAEAAAAFAAIACQABAAEAAAAFAAEACQABAAEAAAAFAAAACQABAAEAAAAFAP//CQABAAEAAAAEAP//CQABAAAAAAADAP//CQABAAAAAAACAP//CQABAAAAAAABAP//CQABAAAAAAAAAP//CQABAAAAAAD/////CQAAAAAAAAD//wwACQAAAAEAAAD//wsACQAAAAEAAAD//woACQAAAAEAAAD//wkACQAAAAEAAAD//wgACQAAAAEAAAD//wcACQAAAAEAAAD//wYACQAAAAEAAAD//wUACQAAAAEAAAD//wQACQAAAAEAAAD//wMACQAAAAEAAAD//wIACQAAAAEAAAD//wEACQAAAAEAAAD//wAACQAAAAEAAAANAAMABwAGAAAAAAAOAAYABwAGAAAAAAARAAYABwAHAAAAAAAQAAMABwAHAAAAAAAOAAMABwAGAAEAAAAPAAMABwAHAAEAAAAPAAYABwAGAAEAAAAQAAYABwAHAAEAAAA=")
 tile_set = SubResource("TileSet_ticer")
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("2_yol54")]
