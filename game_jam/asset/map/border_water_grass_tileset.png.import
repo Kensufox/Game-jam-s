@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3lunweow8nho"
-path="res://.godot/imported/border_water_grass_tileset.png-c928260e192a85d798f3901e7f898e0c.ctex"
+path="res://.godot/imported/border_water_grass_tileset.png-e5108a66d81f48ca24d1b32f714a886b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/map/border_water_grass_tileset.png"
-dest_files=["res://.godot/imported/border_water_grass_tileset.png-c928260e192a85d798f3901e7f898e0c.ctex"]
+source_file="res://Asset/Map/border_water_grass_tileset.png"
+dest_files=["res://.godot/imported/border_water_grass_tileset.png-e5108a66d81f48ca24d1b32f714a886b.ctex"]
 
 [params]
 

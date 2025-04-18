@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2lqqscfee2l5"
-path="res://.godot/imported/border_lava_rock_tileset.png-5c0b81bc43b02a5a1190c5a6bffef2e4.ctex"
+path="res://.godot/imported/border_lava_rock_tileset.png-3a13843332eafe6c63297840684b40d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/map/border_lava_rock_tileset.png"
-dest_files=["res://.godot/imported/border_lava_rock_tileset.png-5c0b81bc43b02a5a1190c5a6bffef2e4.ctex"]
+source_file="res://Asset/Map/border_lava_rock_tileset.png"
+dest_files=["res://.godot/imported/border_lava_rock_tileset.png-3a13843332eafe6c63297840684b40d8.ctex"]
 
 [params]
 
