@@ -1,14 +1,16 @@
-[gd_scene load_steps=31 format=4 uid="uid://bvxvc04xvvoy2"]
+[gd_scene load_steps=32 format=4 uid="uid://bvxvc04xvvoy2"]
 
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://asset/map/border_water_grass_tileset.png" id="7_hgfpj"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://asset/map/border_lava_rock_tileset.png" id="8_2b3dp"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://asset/map/rock_texture_64x32.png" id="9_hyk8l"]
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://asset/map/wall_border_tileset.png" id="10_3bmi2"]
-[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="11_4gwu0"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="12_2kr5v"]
+[ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/scene/ExitLeft.tscn" id="11_4gwu0"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/scene/restartZone.tscn" id="12_2kr5v"]
+[ext_resource type="Script" uid="uid://b7i8d0bvdbii1" path="res://Level/scripts/canon.gd" id="12_bf38g"]
+[ext_resource type="Texture2D" uid="uid://qxpcnp20o2lc" path="res://asset/element/ballista_half_charged.png" id="13_gbfeg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="13_kchjd"]
 [ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://Level/scripts/RestartZone.gd" id="14_bf38g"]
-[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="14_kkwx8"]
+[ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/scene/PlayerOne.tscn" id="14_kkwx8"]
 [ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://Level/scripts/PressurePlate.gd" id="14_vkq44"]
 [ext_resource type="Texture2D" uid="uid://bc1vi5v5rm4ao" path="res://asset/element/blank_button_32x32.png" id="15_ddgwe"]
 [ext_resource type="Texture2D" uid="uid://cqq5cjggejif0" path="res://asset/element/wood_bridge_ghost_32x32.png" id="15_gbfeg"]
@@ -17,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://76yh5qyqk82w" path="res://asset/map/rotate_button_32x32.png" id="17_admc1"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="17_gfdil"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="19_skka6"]
+
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
 
@@ -171,7 +174,7 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ch6g"]
 size = Vector2(32, 32)
 
-[node name="LevelFour" type="Node2D"]
+[node name="main" type="Node2D"]
 
 [node name="Slit" type="Node2D" parent="."]
 
@@ -295,6 +298,21 @@ shape = SubResource("RectangleShape2D_skka6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/TurnTable"]
 texture = ExtResource("17_admc1")
+
+[node name="Canon1" type="Node2D" parent="Left/LeftArea/Tiles/Interactif"]
+position = Vector2(-16, -16)
+rotation = 3.14159
+script = ExtResource("12_bf38g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Canon1"]
+texture_filter = 1
+texture_repeat = 1
+rotation = 3.14159
+texture = ExtResource("13_gbfeg")
+
+[node name="Timer" type="Timer" parent="Left/LeftArea/Tiles/Interactif/Canon1"]
+wait_time = 5.0
+autostart = true
 
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("14_kkwx8")]
 position = Vector2(160, 224)
@@ -472,6 +490,7 @@ zoom = Vector2(1.3, 1.3)
 [connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/TurnTable" to="Left/LeftArea/Tiles/Interactif/TurnTable" method="_on_body_entered"]
 [connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/TurnTable" to="Left/LeftArea/Tiles/Interactif/Bridge" method="_on_turn_table_body_exited"]
 [connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/TurnTable" to="Left/LeftArea/Tiles/Interactif/TurnTable" method="_on_body_exited"]
+[connection signal="timeout" from="Left/LeftArea/Tiles/Interactif/Canon1/Timer" to="Left/LeftArea/Tiles/Interactif/Canon1" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/PressurePlate" to="Right/RightArea/Tiles/Interactif/PressurePlate" method="_on_body_entered"]
 [connection signal="body_exited" from="Right/RightArea/Tiles/Interactif/PressurePlate" to="Right/RightArea/Tiles/Interactif/PressurePlate" method="_on_body_exited"]
 [connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/Bridge" to="Right/RightArea/Tiles/Interactif/Bridge" method="_on_body_entered"]
