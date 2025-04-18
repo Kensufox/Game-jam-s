@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://ds7i3i4g45813"]
+[gd_scene load_steps=22 format=4 uid="uid://ds7i3i4g45813"]
 
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="1_1n1mg"]
+[ext_resource type="Script" uid="uid://bq1slpwadh3ce" path="res://Level/level.gd" id="1_4qhly"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_61sn5"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_5m3tn"]
@@ -150,6 +151,7 @@ gradient = SubResource("Gradient_tnqst")
 
 [node name="LevelOne" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_4qhly")
 
 [node name="Level" type="Node" parent="."]
 
