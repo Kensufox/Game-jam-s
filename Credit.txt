@@ -1,0 +1,24 @@
+Shattered Soul
+
+Game concept:
+Kensufox
+Wayki
+
+Level:
+Design:
+Kensufox
+Building:
+Wayki
+
+Gameplay:
+Wayki
+
+Art:
+Background/UI/Environement:
+Kensufox
+Character base:
+Asset from: Snoblin
+Modified by: Kensufox
+
+Music:
+None :)
