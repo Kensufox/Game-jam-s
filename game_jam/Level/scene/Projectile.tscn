@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpa56nvwktrg3"]
+
+[ext_resource type="Script" uid="uid://beas76xjkrb30" path="res://Level/scripts/projectile.gd" id="1_fxsjr"]
+[ext_resource type="Texture2D" uid="uid://bdmjh2pskvpp5" path="res://asset/element/arrow.png" id="2_a1qct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnh88"]
+size = Vector2(16, 28)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_fxsjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 8
+texture_filter = 1
+texture_repeat = 1
+rotation = 3.14159
+texture = ExtResource("2_a1qct")
+
+[node name="Area2D" type="Area2D" parent="."]
+visibility_layer = 15
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nnh88")
+
+[node name="Life" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Life" to="." method="_on_life_timeout"]

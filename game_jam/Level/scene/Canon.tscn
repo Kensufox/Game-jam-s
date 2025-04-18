@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxdt7iee7tbnr"]
+
+[ext_resource type="Texture2D" uid="uid://qxpcnp20o2lc" path="res://asset/element/ballista_half_charged.png" id="1_gfb5e"]
+[ext_resource type="Script" uid="uid://b7i8d0bvdbii1" path="res://Level/scripts/canon.gd" id="1_x4wac"]
+
+[node name="main" type="Node2D"]
+
+[node name="Canon" type="Node2D" parent="."]
+script = ExtResource("1_x4wac")
+
+[node name="Sprite2D" type="Sprite2D" parent="Canon"]
+texture_filter = 1
+texture_repeat = 1
+rotation = 3.14159
+texture = ExtResource("1_gfb5e")
+
+[node name="Timer" type="Timer" parent="Canon"]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Canon/Timer" to="Canon" method="_on_timer_timeout"]
