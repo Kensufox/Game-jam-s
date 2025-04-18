@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 
 const level_music = preload("res://asset/music/Hero Immortal.mp3")
 
-func _play_music(music: AudioStream, volume = 0.0):
+func _play_music(music: AudioStream, volume = -20.0):
 	if stream == music:
 		return
 		
