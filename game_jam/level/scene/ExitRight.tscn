@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4gsaevd3rgpl"]
 
-[ext_resource type="Script" uid="uid://wxujpjg2bpox" path="res://Level/scripts/area_b.gd" id="1_elson"]
+[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://Level/scripts/end_level.gd" id="1_v8lkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvxdl"]
 size = Vector2(32, 32)
@@ -15,7 +15,7 @@ gradient = SubResource("Gradient_wjytx")
 
 [node name="AreaB" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("1_elson")
+script = ExtResource("1_v8lkn")
 
 [node name="RightExit" type="CollisionShape2D" parent="AreaB"]
 position = Vector2(16, 16)
