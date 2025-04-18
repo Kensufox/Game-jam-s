@@ -14,10 +14,10 @@ func redirection(name: String):
 	if left_area and right_area:
 		match name:
 			"LevelOne":
-				get_tree().change_scene_to_file("res://level/scene/LevelTwo.tscn")
+				get_tree().change_scene_to_file("res://Level/scene/LevelTwo.tscn")
 			"LevelTwo":
-				get_tree().change_scene_to_file("res://level/scene/LevelThree.tscn")
+				get_tree().change_scene_to_file("res://Level/scene/LevelThree.tscn")
 			"LevelThree":
-				get_tree().change_scene_to_file("res://level/scene/LevelFour.tscn")
+				get_tree().change_scene_to_file("res://Level/scene/LevelFour.tscn")
 			"LevelFour":
 				get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
