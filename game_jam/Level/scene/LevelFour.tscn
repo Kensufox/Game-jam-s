@@ -303,6 +303,7 @@ texture = ExtResource("17_admc1")
 [node name="Canon" parent="Left/LeftArea/Tiles/Interactif" instance=ExtResource("14_6fkhl")]
 
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("14_kkwx8")]
+position = Vector2(64, 256)
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 

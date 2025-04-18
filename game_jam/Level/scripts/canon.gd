@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var main = get_tree().get_root().get_node("main")
+@onready var main = $"../../../../.." #get_tree().get_root().get_node("main")
 @onready var projectile = load("res://Level/scene/Projectile.tscn")
 
 func shoot() -> void:

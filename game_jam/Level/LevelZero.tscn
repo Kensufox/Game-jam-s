@@ -1,15 +1,14 @@
-[gd_scene load_steps=21 format=4 uid="uid://dw4uhijylmeh1"]
+[gd_scene load_steps=20 format=4 uid="uid://dw4uhijylmeh1"]
 
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://asset/map/border_water_grass_tileset.png" id="7_djje8"]
-[ext_resource type="Script" path="res://Level/scripts/canon.gd" id="8_2rn7e"]
+[ext_resource type="PackedScene" uid="uid://bnme85qr1e6kd" path="res://Level/Scene/Canon.tscn" id="8_2rn7e"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://asset/map/border_lava_rock_tileset.png" id="8_6w2bw"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="9_c7cia"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://asset/map/rock_texture_64x32.png" id="9_cj30g"]
-[ext_resource type="Texture2D" uid="uid://qxpcnp20o2lc" path="res://asset/element/ballista_half_charged.png" id="9_djje8"]
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://asset/map/wall_border_tileset.png" id="10_kb657"]
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
@@ -153,8 +152,7 @@ colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_d26v2"]
 gradient = SubResource("Gradient_fgvsu")
 
-[node name="main" type="Node2D"]
-position = Vector2(0, 8)
+[node name="LevelZero" type="Node2D"]
 
 [node name="Slit" type="Node2D" parent="."]
 
@@ -236,19 +234,8 @@ region_rect = Rect2(0, 0, 32, 32)
 
 [node name="Interactif" type="Node2D" parent="Left/LeftArea/Tiles"]
 
-[node name="Canon" type="Node2D" parent="Left/LeftArea/Tiles/Interactif"]
-position = Vector2(16, 80)
-rotation = 3.14159
-script = ExtResource("8_2rn7e")
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Canon"]
-texture_filter = 1
-texture_repeat = 1
-rotation = 3.14159
-texture = ExtResource("9_djje8")
-
-[node name="Timer" type="Timer" parent="Left/LeftArea/Tiles/Interactif/Canon"]
-autostart = true
+[node name="Canon" parent="Left/LeftArea/Tiles/Interactif" instance=ExtResource("8_2rn7e")]
+position = Vector2(0, 64)
 
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("1_yupli")]
 position = Vector2(128, 224)
@@ -367,5 +354,3 @@ scale = Vector2(8, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
 zoom = Vector2(1.5, 1.5)
-
-[connection signal="timeout" from="Left/LeftArea/Tiles/Interactif/Canon/Timer" to="Left/LeftArea/Tiles/Interactif/Canon" method="_on_timer_timeout"]
