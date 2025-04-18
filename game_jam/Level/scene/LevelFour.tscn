@@ -1,5 +1,6 @@
 [gd_scene load_steps=32 format=4 uid="uid://bvxvc04xvvoy2"]
 
+[ext_resource type="Script" uid="uid://bq1slpwadh3ce" path="res://Level/level.gd" id="1_gfdil"]
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://asset/map/border_water_grass_tileset.png" id="7_hgfpj"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://asset/map/border_lava_rock_tileset.png" id="8_2b3dp"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://asset/map/rock_texture_64x32.png" id="9_hyk8l"]
@@ -173,6 +174,7 @@ size = Vector2(32, 32)
 size = Vector2(32, 32)
 
 [node name="LevelFour" type="Node2D"]
+script = ExtResource("1_gfdil")
 
 [node name="Slit" type="Node2D" parent="."]
 

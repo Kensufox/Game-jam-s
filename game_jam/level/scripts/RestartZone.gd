@@ -14,6 +14,7 @@ func _on_body_entered(body: Node) -> void:
 		VariableGlobale.invert_controls_left = false
 		VariableGlobale.invert_controls_right = false
 		get_tree().reload_current_scene()
+		#NodeReload.reload_node("Level", "res://Level/Scene/LevelOne.tscn")
 
 func _on_body_exited(body: Node) -> void:
 	bodies_inside.erase(body)
