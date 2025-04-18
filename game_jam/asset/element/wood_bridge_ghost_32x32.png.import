@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqq5cjggejif0"
-path="res://.godot/imported/wood_bridge_ghost_32x32.png-2e202362d0901d15e57fa1de0596ec45.ctex"
+path="res://.godot/imported/wood_bridge_ghost_32x32.png-421ef390bd11c42302d9326ae5dcfbb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/element/wood_bridge_ghost_32x32.png"
-dest_files=["res://.godot/imported/wood_bridge_ghost_32x32.png-2e202362d0901d15e57fa1de0596ec45.ctex"]
+source_file="res://Asset/element/wood_bridge_ghost_32x32.png"
+dest_files=["res://.godot/imported/wood_bridge_ghost_32x32.png-421ef390bd11c42302d9326ae5dcfbb2.ctex"]
 
 [params]
 

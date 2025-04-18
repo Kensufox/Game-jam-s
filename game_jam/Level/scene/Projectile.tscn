@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpa56nvwktrg3"]
 
-[ext_resource type="Script" uid="uid://beas76xjkrb30" path="res://Level/scripts/projectile.gd" id="1_fxsjr"]
-[ext_resource type="Texture2D" uid="uid://bdmjh2pskvpp5" path="res://asset/element/arrow.png" id="2_a1qct"]
+[ext_resource type="Script" uid="uid://beas76xjkrb30" path="res://Level/Scripts/Projectile.gd" id="1_ditmf"]
+[ext_resource type="Texture2D" uid="uid://bdmjh2pskvpp5" path="res://Asset/element/arrow.png" id="2_7dam7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fxsjr"]
 size = Vector2(16, 20)
@@ -10,7 +10,7 @@ size = Vector2(16, 20)
 size = Vector2(16, 28)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_fxsjr")
+script = ExtResource("1_ditmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 10)
@@ -21,7 +21,8 @@ z_index = 8
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(16, 16)
-texture = ExtResource("2_a1qct")
+rotation = 3.14159
+texture = ExtResource("2_7dam7")
 
 [node name="Area2D" type="Area2D" parent="."]
 visibility_layer = 15

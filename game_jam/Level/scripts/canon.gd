@@ -17,3 +17,6 @@ func shoot() -> void:
 
 func _on_timer_timeout() -> void:
 	shoot()
+	
+func _ready() -> void:
+	shoot()

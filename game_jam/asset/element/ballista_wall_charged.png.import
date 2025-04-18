@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bykg77pkhbhox"
-path="res://.godot/imported/ballista_wall_charged.png-1e7144441520ebbbcdadea84a1a162e8.ctex"
+path="res://.godot/imported/ballista_wall_charged.png-112648e59c5e0d1e980ef8d57f9f55c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/element/ballista_wall_charged.png"
-dest_files=["res://.godot/imported/ballista_wall_charged.png-1e7144441520ebbbcdadea84a1a162e8.ctex"]
+source_file="res://Asset/element/ballista_wall_charged.png"
+dest_files=["res://.godot/imported/ballista_wall_charged.png-112648e59c5e0d1e980ef8d57f9f55c0.ctex"]
 
 [params]
 

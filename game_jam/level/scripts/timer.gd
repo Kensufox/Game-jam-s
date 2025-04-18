@@ -1,6 +1,6 @@
 extends Label
 
-var countdown := 6
+var countdown := 8
 #temps minimum réussit 6 secondes
 
 func _ready():
