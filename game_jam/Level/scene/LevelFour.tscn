@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bvxvc04xvvoy2"]
+[gd_scene load_steps=32 format=4 uid="uid://bvxvc04xvvoy2"]
 
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://asset/map/border_water_grass_tileset.png" id="7_hgfpj"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://asset/map/border_lava_rock_tileset.png" id="8_2b3dp"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://asset/map/wall_border_tileset.png" id="10_3bmi2"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="11_4gwu0"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="12_2kr5v"]
-[ext_resource type="Script" path="res://Level/scripts/canon.gd" id="12_bf38g"]
-[ext_resource type="Texture2D" uid="uid://qxpcnp20o2lc" path="res://asset/element/ballista_half_charged.png" id="13_gbfeg"]
 [ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/wall.tscn" id="13_kchjd"]
+[ext_resource type="PackedScene" uid="uid://bnme85qr1e6kd" path="res://Level/Scene/Canon.tscn" id="14_6fkhl"]
 [ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://Level/scripts/RestartZone.gd" id="14_bf38g"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="14_kkwx8"]
 [ext_resource type="Script" uid="uid://du80nf8pxtbyk" path="res://Level/scripts/PressurePlate.gd" id="14_vkq44"]
@@ -186,37 +185,36 @@ region_rect = Rect2(0, 0, 64, 800)
 [node name="Left" type="Node" parent="."]
 
 [node name="LeftArea" type="Node2D" parent="Left"]
-position = Vector2(256, 192)
+position = Vector2(160, 160)
 
 [node name="Background" type="TileMapLayer" parent="Left/LeftArea"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAcABgAHAAUAAAABAAcABgAHAAUAAAACAAcABgAHAAUAAAADAAcABgAHAAUAAAAEAAcABgAHAAUAAAAFAAcABgAHAAUAAAAGAAcABgAHAAUAAAAGAAYABgAHAAUAAAAHAAYABgAHAAUAAAAHAAcABgAHAAUAAAAFAAYABgAHAAUAAAAEAAYABgAHAAUAAAADAAYABgAHAAUAAAACAAYABgAHAAUAAAABAAYABgAHAAUAAAAAAAYABgAHAAUAAAAAAAUABgAHAAUAAAABAAUABgAHAAUAAAACAAUABgAHAAUAAAADAAUABgAHAAUAAAAEAAUABgAHAAUAAAAFAAUABgAHAAUAAAAGAAUABgAEAAEAAAAHAAUABgAHAAAAAAAHAAQABgAHAAUAAAAGAAQABgAFAAAAAAAFAAQABgAHAAEAAAAEAAQABgAGAAEAAAADAAQABgAHAAEAAAACAAQABgAGAAEAAAABAAQABgAGAAAAAAAAAAQABgAHAAUAAAAAAAMABgAHAAUAAAABAAMABgAHAAUAAAACAAMABgAHAAUAAAADAAMABgAHAAUAAAAEAAMABgAHAAUAAAAFAAMABgAHAAUAAAAGAAMABgAHAAUAAAAHAAIABgAHAAUAAAAGAAIABgAHAAUAAAAFAAIABgAHAAUAAAAEAAIABgAHAAUAAAADAAIABgAHAAUAAAACAAIABgAHAAUAAAABAAIABgAHAAUAAAAAAAIABgAHAAUAAAAAAAEABgAHAAUAAAABAAEABgAHAAUAAAACAAEABgAHAAUAAAADAAEABgAHAAUAAAAEAAEABgAHAAUAAAAFAAEABgAHAAUAAAAGAAEABgAHAAUAAAAHAAEABgAHAAUAAAAGAAAABgAHAAUAAAAFAAAABgAHAAUAAAAEAAAABgAHAAUAAAADAAAABgAHAAUAAAACAAAABgAHAAUAAAABAAAABgAHAAUAAAAAAAAABgAHAAUAAAD//wcABgAHAAUAAAD//wYABgAHAAUAAAD//wUABgAHAAUAAAD//wQABgAHAAUAAAD//wMABgAHAAUAAAD//wIABgAHAAUAAAD//wEABgAHAAUAAAD//wAABgAHAAUAAAAIAAIACQACAAEAAAAIAAMACQACAAEAAAAIAAQACQACAAEAAAAIAAUACQACAAEAAAAIAAYACQACAAEAAAAIAAcACQACAAEAAAAIAAgACQACAAIAAAAHAAgACQABAAIAAAAGAAgACQABAAIAAAAFAAgACQABAAIAAAAEAAgACQABAAIAAAADAAgACQABAAIAAAACAAgACQABAAIAAAABAAgACQABAAIAAAAAAAgACQABAAIAAAD//wgACQABAAIAAAD+/wcABgAHAAUAAAD9/wcABgAHAAUAAAD9/wYABgAHAAUAAAD+/wYABgAHAAUAAAD+/wUABgAHAAUAAAD9/wUABgAHAAUAAAD9/wQABgAHAAUAAAD+/wQABgAHAAUAAAD+/wMABgAHAAUAAAD9/wMABgAHAAUAAAD9/wIABgAHAAUAAAD+/wIABgAHAAUAAAD+/wEABgAHAAUAAAD9/wEABgAHAAUAAAD9/wAABgAHAAUAAAD+/wAABgAHAAUAAAAHAAAABgAHAAUAAAD9////BgAHAAUAAAD+////BgAHAAUAAAD/////BgAHAAUAAAAAAP//BgAHAAUAAAABAP//BgAHAAUAAAACAP//BgAHAAUAAAADAP//BgAHAAUAAAAEAP//BgAHAAUAAAAFAP//BgAHAAUAAAAGAP//BgAHAAUAAAAHAP//BgAHAAUAAAAHAAMABgAHAAUAAAD8//7/CQAAAAAAAAAHAP7/CQABAAAAAAAGAP7/CQABAAAAAAAFAP7/CQABAAAAAAAEAP7/CQABAAAAAAADAP7/CQABAAAAAAACAP7/CQABAAAAAAABAP7/CQABAAAAAAAAAP7/CQABAAAAAAD///7/CQABAAAAAAD+//7/CQABAAAAAAD9//7/CQABAAAAAAAIAAEACQACAAEAAAAIAAAACQACAAEAAAAIAP//CQACAAEAAAAIAP7/CQACAAAAAAD8////CQAAAAEAAAD8/wAACQAAAAEAAAD8/wEACQAAAAEAAAD8/wIACQAAAAEAAAD8/wMACQAAAAEAAAD8/wQACQAAAAEAAAD8/wUACQAAAAEAAAD8/wYACQAAAAEAAAD8/wcACQAAAAEAAAD+/wgACQABAAIAAAD9/wgACQABAAIAAAD8/wgACQAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAcABgAHAAUAAAABAAcABgAHAAUAAAACAAcABgAHAAUAAAADAAcABgAHAAUAAAAEAAcABgAHAAUAAAAFAAcABgAHAAUAAAAGAAcABgAHAAUAAAAGAAYABgAHAAUAAAAHAAYABgAHAAUAAAAHAAcABgAHAAUAAAAFAAYABgAHAAUAAAAEAAYABgAHAAUAAAADAAYABgAHAAUAAAACAAYABgAHAAUAAAABAAYABgAHAAUAAAAAAAYABgAHAAUAAAAAAAUABgAHAAUAAAABAAUABgAHAAUAAAACAAUABgAHAAUAAAADAAUABgAHAAUAAAAEAAUABgAGAAAAAAAFAAUABgAGAAEAAAAGAAUABgAHAAEAAAAHAAUABgAGAAEAAAAHAAQABgAHAAUAAAAGAAQABgAHAAUAAAAFAAQABgAHAAUAAAAEAAQABgAHAAUAAAADAAQABgAHAAUAAAACAAQABgAHAAUAAAAAAAQABgAHAAUAAAAAAAMABgAHAAUAAAABAAMABgAHAAUAAAACAAMABgAHAAUAAAADAAMABgAHAAUAAAAEAAMABgAHAAUAAAAFAAMABgAHAAUAAAAGAAMABgAHAAUAAAAHAAIABgAHAAUAAAAGAAIABgAHAAUAAAAFAAIABgAHAAUAAAAEAAIABgAHAAUAAAADAAIABgAHAAUAAAACAAIABgAHAAUAAAABAAIABgAHAAUAAAAAAAIABgAHAAUAAAAAAAEABgAHAAUAAAABAAEABgAHAAUAAAACAAEABgAHAAUAAAADAAEABgAHAAUAAAAEAAEABgAHAAUAAAAFAAEABgAHAAUAAAAGAAEABgAHAAUAAAAHAAEABgAHAAUAAAAGAAAABgAHAAUAAAAFAAAABgAHAAUAAAAEAAAABgAHAAUAAAADAAAABgAHAAUAAAACAAAABgAHAAUAAAABAAAABgAHAAUAAAAAAAAABgAHAAUAAAAIAAIABgAHAAUAAAAIAAMABgAHAAUAAAAIAAQABgAHAAUAAAAIAAUABgAHAAEAAAAIAAYABgAHAAUAAAAIAAcABgAHAAUAAAAIAAgABgAHAAUAAAAHAAgABgAHAAUAAAAGAAgABgAHAAUAAAAFAAgABgAHAAUAAAAEAAgABgAHAAUAAAADAAgABgAHAAUAAAACAAgABgAHAAUAAAABAAgABgAHAAUAAAAAAAgABgAHAAUAAAAHAAAABgAHAAUAAAAHAAMABgAHAAUAAAAIAAEABgAHAAUAAAAIAAAABgAHAAUAAAAJAAAABgAHAAUAAAAJAAEABgAHAAUAAAAJAAIABgAHAAUAAAAJAAMABgAHAAUAAAAJAAQABgAHAAUAAAAJAAUABgAFAAAAAAAJAAYABgAEAAEAAAAJAAcABgAHAAUAAAAJAAgABgAHAAUAAAAKAAAABgAHAAUAAAAKAAEABgAHAAUAAAAKAAIABgAHAAUAAAAKAAMABgAHAAUAAAAKAAQABgAHAAUAAAAKAAUABgAHAAUAAAAKAAYABgAHAAAAAAAKAAcABgAHAAUAAAAKAAgABgAHAAUAAAABAAQABgAHAAUAAAD/////CQAAAAAAAAAAAP//CQABAAAAAAABAP//CQABAAAAAAACAP//CQABAAAAAAADAP//CQABAAAAAAAEAP//CQABAAAAAAAFAP//CQABAAAAAAAGAP//CQABAAAAAAAHAP//CQABAAAAAAAIAP//CQABAAAAAAAJAP//CQABAAAAAAAKAP//CQABAAAAAAALAP//CQACAAAAAAALAAAACQACAAEAAAALAAEACQACAAEAAAALAAIACQACAAEAAAALAAMACQACAAEAAAALAAQACQACAAEAAAALAAUACQACAAEAAAALAAYACQACAAEAAAALAAcACQACAAEAAAALAAgACQACAAEAAAALAAkACQACAAIAAAAAAAkACQABAAIAAAABAAkACQABAAIAAAACAAkACQABAAIAAAADAAkACQABAAIAAAAEAAkACQABAAIAAAAFAAkACQABAAIAAAAGAAkACQABAAIAAAAHAAkACQABAAIAAAAIAAkACQABAAIAAAAJAAkACQABAAIAAAAKAAkACQABAAIAAAD//wkACQAAAAIAAAD//wAACQAAAAEAAAD//wEACQAAAAEAAAD//wIACQAAAAEAAAD//wMACQAAAAEAAAD//wQACQAAAAEAAAD//wUACQAAAAEAAAD//wYACQAAAAEAAAD//wcACQAAAAEAAAD//wgACQAAAAEAAAA=")
 tile_set = SubResource("TileSet_ticer")
 
 [node name="ExitLeft" parent="Left/LeftArea" instance=ExtResource("11_4gwu0")]
-position = Vector2(224, 0)
+position = Vector2(320, 32)
 
 [node name="Tiles" type="Node2D" parent="Left/LeftArea"]
 
 [node name="Water" type="Node2D" parent="Left/LeftArea/Tiles"]
-position = Vector2(192, 128)
 
 [node name="Hitbox2" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("12_2kr5v")]
-position = Vector2(-64, 0)
+position = Vector2(224, 160)
 scale = Vector2(3, 1)
 
 [node name="Hitbox" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("12_2kr5v")]
-position = Vector2(0, 32)
+position = Vector2(128, 160)
 scale = Vector2(2, 1)
 
 [node name="Hitbox3" parent="Left/LeftArea/Tiles/Water" instance=ExtResource("12_2kr5v")]
-position = Vector2(-160, 0)
+position = Vector2(288, 192)
 scale = Vector2(2, 1)
 
 [node name="Obstacle" type="Node2D" parent="Left/LeftArea/Tiles"]
 
 [node name="1" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(0, 64)
+position = Vector2(96, 96)
 scale = Vector2(1, 2)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/1" instance=ExtResource("13_kchjd")]
@@ -228,7 +226,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="2" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(224, 32)
+position = Vector2(320, 64)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/2" instance=ExtResource("13_kchjd")]
 
@@ -239,30 +237,30 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="3" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(-48, 144)
+position = Vector2(0, 160)
 scale = Vector2(3, 1)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/3" instance=ExtResource("13_kchjd")]
-position = Vector2(-16, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/3"]
+position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_d26v2")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="4" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(48, 48)
+position = Vector2(128, 64)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/4" instance=ExtResource("13_kchjd")]
-position = Vector2(-16, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Obstacle/4"]
+position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_d26v2")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="5" type="Node2D" parent="Left/LeftArea/Tiles/Obstacle"]
-position = Vector2(128, 32)
+position = Vector2(224, 64)
 scale = Vector2(2, 1)
 
 [node name="Node2D" parent="Left/LeftArea/Tiles/Obstacle/5" instance=ExtResource("13_kchjd")]
@@ -276,93 +274,83 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="Interactif" type="Node2D" parent="Left/LeftArea/Tiles"]
 
 [node name="Bridge" type="Area2D" parent="Left/LeftArea/Tiles/Interactif"]
-position = Vector2(112, 144)
+position = Vector2(192, 160)
 collision_mask = 2
 script = ExtResource("14_bf38g")
 
 [node name="Bridge" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/Bridge"]
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_d6p7o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Bridge"]
 texture_filter = 1
+position = Vector2(16, 16)
 texture = ExtResource("15_gbfeg")
 
 [node name="TurnTable" type="Area2D" parent="Left/LeftArea/Tiles/Interactif"]
-position = Vector2(-48, 80)
+position = Vector2(32, 96)
 collision_mask = 2
 script = ExtResource("16_1ch6g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftArea/Tiles/Interactif/TurnTable"]
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_skka6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/TurnTable"]
+position = Vector2(16, 16)
 texture = ExtResource("17_admc1")
 
-[node name="Canon1" type="Node2D" parent="Left/LeftArea/Tiles/Interactif"]
-position = Vector2(-16, -16)
-rotation = 3.14159
-script = ExtResource("12_bf38g")
-
-[node name="Sprite2D" type="Sprite2D" parent="Left/LeftArea/Tiles/Interactif/Canon1"]
-texture_filter = 1
-texture_repeat = 1
-rotation = 3.14159
-texture = ExtResource("13_gbfeg")
-
-[node name="Timer" type="Timer" parent="Left/LeftArea/Tiles/Interactif/Canon1"]
-wait_time = 5.0
-autostart = true
+[node name="Canon" parent="Left/LeftArea/Tiles/Interactif" instance=ExtResource("14_6fkhl")]
 
 [node name="LeftPlayer" parent="Left/LeftArea" instance=ExtResource("14_kkwx8")]
-position = Vector2(160, 224)
 
 [node name="Wall" type="Node2D" parent="Left/LeftArea"]
 
 [node name="Left" parent="Left/LeftArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(-128, -32)
+position = Vector2(-32, 0)
 scale = Vector2(1, 9)
 
 [node name="Right" parent="Left/LeftArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(256, -32)
+position = Vector2(352, 0)
 scale = Vector2(1, 9)
 
 [node name="Up" parent="Left/LeftArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(-96, -64)
+position = Vector2(0, -32)
 scale = Vector2(11, 1)
 
 [node name="Down" parent="Left/LeftArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(-96, 256)
+position = Vector2(0, 288)
 scale = Vector2(11, 1)
 
 [node name="Right" type="Node" parent="."]
 
 [node name="RightArea" type="Node2D" parent="Right"]
-position = Vector2(640, 192)
+position = Vector2(640, 160)
 
 [node name="Background" type="TileMapLayer" parent="Right/RightArea"]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAAcACAAAAAAAAAABAAcACAABAAAAAAACAAcACAAAAAAAAAADAAcACAABAAAAAAAEAAcACAAAAAAAAAAFAAcACAABAAAAAAAGAAcACAAAAAAAAAAHAAcACAABAAAAAAAHAAYACAABAAAAAAAGAAYACAAAAAAAAAAFAAYACAABAAAAAAAEAAYACAAAAAAAAAADAAYACAABAAAAAAACAAYACAAAAAAAAAABAAYACAABAAAAAAAAAAYACAAAAAAAAAAAAAUACAAAAAAAAAABAAUACAABAAAAAAACAAUACAAAAAAAAAADAAUACAABAAAAAAAEAAUACAAAAAAAAAAFAAUACAABAAAAAAAGAAUACAAAAAAAAAAHAAUABwADAAUAAAAGAAQACAAAAAAAAAAFAAQACAABAAAAAAAEAAQACAAAAAAAAAADAAQACAABAAAAAAACAAQACAAAAAAAAAABAAQACAABAAAAAAAAAAQACAAAAAAAAAAAAAMACAAAAAAAAAABAAMACAABAAAAAAACAAMACAAAAAAAAAADAAMACAABAAAAAAAEAAMACAAAAAAAAAAFAAMACAABAAAAAAAGAAMACAAAAAAAAAAGAAIACAAAAAAAAAAHAAIACAABAAAAAAAFAAIACAABAAAAAAAEAAIACAAAAAAAAAAEAAEACAAAAAAAAAAEAAAACAAAAAAAAAADAAAACAABAAAAAAADAAEACAABAAAAAAADAAIACAABAAAAAAACAAIACAAAAAAAAAACAAEACAAAAAAAAAACAAAACAAAAAAAAAABAAAACAABAAAAAAABAAEACAABAAAAAAABAAIACAABAAAAAAAAAAEACAAAAAAAAAAAAAAACAAAAAAAAAAAAAIACAAAAAAAAAAFAAAACAABAAAAAAAGAAAACAAAAAAAAAAHAAAACAABAAAAAAAHAAEACAABAAAAAAAGAAEACAAAAAAAAAAFAAEACAABAAAAAAD/////CQAAAAEAAAAAAP//CAAAAAAAAAABAP//CAABAAAAAAACAP//CAAAAAAAAAADAP//CAABAAAAAAAEAP//CAAAAAAAAAAFAP//CAABAAAAAAAGAP//CAAAAAAAAAAHAP//CAABAAAAAAAIAP//CAAAAAAAAAAIAAAACAAAAAAAAAAIAAEACAAAAAAAAAAIAAIACAAAAAAAAAAIAAcABwADAAUAAAAHAAgACQABAAIAAAAGAAgACQABAAIAAAAFAAgACQABAAIAAAAEAAgACQABAAIAAAADAAgACQABAAIAAAACAAgACQABAAIAAAABAAgACQABAAIAAAAAAAgACQABAAIAAAD//wgACQAAAAIAAAD//wcACQAAAAEAAAD//wYACQAAAAEAAAD//wUACQAAAAEAAAD//wQACQAAAAEAAAD//wMACQAAAAEAAAD//wIACQAAAAEAAAD//wEACQAAAAEAAAD//wAACQAAAAEAAAAKAAcABwAGAAUAAAAKAAYABwAGAAMAAAAKAAUABwAGAAIAAAAKAAQACAAAAAAAAAAKAAMACAAAAAAAAAAKAAIACAAAAAAAAAAKAAEACAAAAAAAAAAKAAAACAAAAAAAAAAJAAAACAABAAAAAAAJAAEACAABAAAAAAAJAAIACAABAAAAAAAJAAMACAABAAAAAAAJAAUABwAFAAIAAAAJAP//CAABAAAAAAAKAP//CAAAAAAAAAAJAAcABwAEAAUAAAAIAAgACQABAAIAAAAJAAYABwAAAAUAAAAIAAUABwACAAAAAAAHAAQABwAHAAIAAAAIAAYABwADAAQAAAAJAAgACQABAAIAAAAKAAgACQABAAIAAAALAAgACQACAAIAAAALAP7/CQACAAAAAAAAAP7/CQABAAAAAAABAP7/CQABAAAAAAACAP7/CQABAAAAAAADAP7/CQABAAAAAAAEAP7/CQABAAAAAAAFAP7/CQABAAAAAAAGAP7/CQABAAAAAAAHAP7/CQABAAAAAAAIAP7/CQABAAAAAAAJAP7/CQABAAAAAAAKAP7/CQABAAAAAAD///7/CQAAAAAAAAAIAAMACAAAAAAAAAAHAAMACAABAAAAAAAIAAQACAAAAAAAAAAJAAQACAABAAAAAAALAAcACQACAAEAAAALAAYACQACAAEAAAALAAUACQACAAEAAAALAAQACQACAAEAAAALAAMACQACAAEAAAALAAIACQACAAEAAAALAAEACQACAAEAAAALAAAACQACAAEAAAALAP//CQACAAEAAAA=")
+tile_map_data = PackedByteArray("AAD/////CQAAAAAAAAAAAP//CQABAAAAAAABAP//CQABAAAAAAACAP//CQABAAAAAAADAP//CQABAAAAAAAEAP//CQABAAAAAAAFAP//CQABAAAAAAAGAP//CQABAAAAAAAHAP//CQABAAAAAAAIAP//CQABAAAAAAD//wgACQAAAAEAAAD//wcACQAAAAEAAAD//wYACQAAAAEAAAD//wUACQAAAAEAAAD//wQACQAAAAEAAAD//wMACQAAAAEAAAD//wIACQAAAAEAAAD//wEACQAAAAEAAAD//wAACQAAAAEAAAAJAP//CQABAAAAAAAKAP//CQABAAAAAAALAAgACQACAAEAAAALAAcACQACAAEAAAALAAYACQACAAEAAAALAAUACQACAAEAAAALAAQACQACAAEAAAALAAMACQACAAEAAAALAAIACQACAAEAAAALAAEACQACAAEAAAALAAAACQACAAEAAAALAP//CQACAAAAAAAAAAkACQABAAIAAAABAAkACQABAAIAAAACAAkACQABAAIAAAADAAkACQABAAIAAAAEAAkACQABAAIAAAAFAAkACQABAAIAAAAGAAkACQABAAIAAAAHAAkACQABAAIAAAAIAAkACQABAAIAAAAJAAkACQABAAIAAAAKAAkACQABAAIAAAALAAkACQACAAIAAAD//wkACQAAAAIAAAAIAAgABwADAAUAAAAKAAgABwAGAAUAAAAKAAYABwAGAAIAAAAJAAgABwAEAAUAAAAKAAcABwAGAAQAAAAJAAYABwAEAAIAAAAJAAcABwAAAAUAAAAIAAcABwADAAQAAAAIAAYABwACAAAAAAAHAAYABwAEAAEAAAAHAAUABwAHAAIAAAAAAAAACAAAAAAAAAABAAAACAABAAAAAAAAAAEACAAAAAAAAAABAAEACAABAAAAAAAAAAIACAAAAAAAAAABAAIACAABAAAAAAAAAAMACAAAAAAAAAABAAMACAABAAAAAAAAAAQACAAAAAAAAAABAAQACAABAAAAAAACAAAACAAAAAAAAAADAAAACAABAAAAAAACAAEACAAAAAAAAAADAAEACAABAAAAAAACAAIACAAAAAAAAAADAAIACAABAAAAAAACAAMACAAAAAAAAAADAAMACAABAAAAAAACAAQACAAAAAAAAAADAAQACAABAAAAAAAEAAAACAAAAAAAAAAFAAAACAABAAAAAAAEAAEACAAAAAAAAAAFAAEACAABAAAAAAAEAAIACAAAAAAAAAAFAAIACAABAAAAAAAEAAMACAAAAAAAAAAFAAMACAABAAAAAAAEAAQACAAAAAAAAAAFAAQACAABAAAAAAAGAAAACAAAAAAAAAAHAAAACAABAAAAAAAGAAEACAAAAAAAAAAHAAEACAABAAAAAAAGAAIACAAAAAAAAAAHAAIACAABAAAAAAAGAAMACAAAAAAAAAAHAAMACAABAAAAAAAGAAQACAAAAAAAAAAHAAQACAABAAAAAAAIAAAACAAAAAAAAAAJAAAACAABAAAAAAAIAAEACAAAAAAAAAAJAAEACAABAAAAAAAIAAIACAAAAAAAAAAJAAIACAABAAAAAAAIAAMACAAAAAAAAAAJAAMACAABAAAAAAAIAAQACAAAAAAAAAAJAAQACAABAAAAAAAKAAAACAAAAAAAAAAKAAEACAAAAAAAAAAKAAIACAAAAAAAAAAKAAMACAAAAAAAAAAKAAQACAAAAAAAAAAIAAUACAAAAAAAAAAJAAUACAABAAAAAAAKAAUACAAAAAAAAAAAAAUACAAAAAAAAAABAAUACAABAAAAAAAAAAYACAAAAAAAAAABAAYACAABAAAAAAAAAAcACAAAAAAAAAABAAcACAABAAAAAAAAAAgACAAAAAAAAAABAAgACAABAAAAAAACAAUACAAAAAAAAAADAAUACAABAAAAAAACAAYACAAAAAAAAAADAAYACAABAAAAAAACAAcACAAAAAAAAAADAAcACAABAAAAAAACAAgACAAAAAAAAAADAAgACAABAAAAAAAEAAUACAAAAAAAAAAFAAUACAABAAAAAAAEAAYACAAAAAAAAAAFAAYACAABAAAAAAAEAAcACAAAAAAAAAAFAAcACAABAAAAAAAEAAgACAAAAAAAAAAFAAgACAABAAAAAAAGAAUACAAAAAAAAAAGAAYACAAAAAAAAAAGAAcACAAAAAAAAAAGAAgACAAAAAAAAAAHAAcACAAAAAAAAAAHAAgACAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ticer")
 
 [node name="ExitRight" parent="Right/RightArea" instance=ExtResource("19_skka6")]
+position = Vector2(0, 32)
 
 [node name="Tiles" type="Node2D" parent="Right/RightArea"]
 
 [node name="Lava" type="Node2D" parent="Right/RightArea/Tiles"]
-position = Vector2(224, 160)
 
 [node name="Hitbox2" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("12_2kr5v")]
-position = Vector2(0, -32)
+position = Vector2(224, 160)
 scale = Vector2(1, 2)
 
 [node name="Hitbox" parent="Right/RightArea/Tiles/Lava" instance=ExtResource("12_2kr5v")]
-position = Vector2(32, 0)
+position = Vector2(256, 192)
 scale = Vector2(3, 3)
 
 [node name="Obstacle" type="Node2D" parent="Right/RightArea/Tiles"]
 
 [node name="1" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(224, 64)
+position = Vector2(224, 96)
 scale = Vector2(1, 2)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/1" instance=ExtResource("13_kchjd")]
@@ -374,7 +362,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="2" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(192, 32)
+position = Vector2(192, 64)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/2" instance=ExtResource("13_kchjd")]
 
@@ -385,30 +373,30 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="3" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(304, 144)
+position = Vector2(256, 160)
 scale = Vector2(3, 1)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/3" instance=ExtResource("13_kchjd")]
-position = Vector2(-16, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/3"]
+position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_d26v2")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="4" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(16, 48)
+position = Vector2(0, 64)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/4" instance=ExtResource("13_kchjd")]
-position = Vector2(-16, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Obstacle/4"]
+position = Vector2(16, 16)
 texture = SubResource("GradientTexture2D_d26v2")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="5" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(64, 32)
+position = Vector2(64, 64)
 scale = Vector2(2, 1)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/5" instance=ExtResource("13_kchjd")]
@@ -420,7 +408,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
 [node name="6" type="Node2D" parent="Right/RightArea/Tiles/Obstacle"]
-position = Vector2(64, 128)
+position = Vector2(64, 160)
 scale = Vector2(1, 2)
 
 [node name="Node2D" parent="Right/RightArea/Tiles/Obstacle/6" instance=ExtResource("13_kchjd")]
@@ -434,7 +422,7 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="Interactif" type="Node2D" parent="Right/RightArea/Tiles"]
 
 [node name="PressurePlate" type="Area2D" parent="Right/RightArea/Tiles/Interactif"]
-position = Vector2(32, 160)
+position = Vector2(32, 192)
 collision_mask = 2
 script = ExtResource("14_vkq44")
 
@@ -448,37 +436,39 @@ position = Vector2(16, 16)
 texture = ExtResource("15_ddgwe")
 
 [node name="Bridge" type="Area2D" parent="Right/RightArea/Tiles/Interactif"]
-position = Vector2(480, -320)
+position = Vector2(192, 160)
 collision_mask = 2
 script = ExtResource("14_bf38g")
 
 [node name="Bridge" type="CollisionShape2D" parent="Right/RightArea/Tiles/Interactif/Bridge"]
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_1ch6g")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Right/RightArea/Tiles/Interactif/Bridge"]
 texture_filter = 1
+position = Vector2(16, 16)
 texture = ExtResource("16_gbfeg")
 
 [node name="RightPlayer" parent="Right/RightArea" instance=ExtResource("17_gfdil")]
-position = Vector2(64, 225)
+position = Vector2(64, 256)
 
 [node name="Wall" type="Node2D" parent="Right/RightArea"]
 
 [node name="Left" parent="Right/RightArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(-32, -32)
+position = Vector2(-32, 0)
 scale = Vector2(1, 9)
 
 [node name="Right" parent="Right/RightArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(352, -32)
+position = Vector2(352, 0)
 scale = Vector2(1, 9)
 
 [node name="Up" parent="Right/RightArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(0, -64)
+position = Vector2(0, -32)
 scale = Vector2(11, 1)
 
 [node name="Down" parent="Right/RightArea/Wall" instance=ExtResource("13_kchjd")]
-position = Vector2(0, 256)
+position = Vector2(0, 288)
 scale = Vector2(11, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -489,7 +479,6 @@ zoom = Vector2(1.3, 1.3)
 [connection signal="body_entered" from="Left/LeftArea/Tiles/Interactif/TurnTable" to="Left/LeftArea/Tiles/Interactif/TurnTable" method="_on_body_entered"]
 [connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/TurnTable" to="Left/LeftArea/Tiles/Interactif/Bridge" method="_on_turn_table_body_exited"]
 [connection signal="body_exited" from="Left/LeftArea/Tiles/Interactif/TurnTable" to="Left/LeftArea/Tiles/Interactif/TurnTable" method="_on_body_exited"]
-[connection signal="timeout" from="Left/LeftArea/Tiles/Interactif/Canon1/Timer" to="Left/LeftArea/Tiles/Interactif/Canon1" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/PressurePlate" to="Right/RightArea/Tiles/Interactif/PressurePlate" method="_on_body_entered"]
 [connection signal="body_exited" from="Right/RightArea/Tiles/Interactif/PressurePlate" to="Right/RightArea/Tiles/Interactif/PressurePlate" method="_on_body_exited"]
 [connection signal="body_entered" from="Right/RightArea/Tiles/Interactif/Bridge" to="Right/RightArea/Tiles/Interactif/Bridge" method="_on_body_entered"]
