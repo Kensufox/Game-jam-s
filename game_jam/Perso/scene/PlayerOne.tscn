@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdttl1i47orm"]
 
 [ext_resource type="Script" uid="uid://cu2cyavjknxrd" path="res://Perso/scripts/Player.gd" id="1_y8hmf"]
-[ext_resource type="Texture2D" uid="uid://bu6s5ksbtl4hm" path="res://icon.svg" id="2_s0q8h"]
+[ext_resource type="Texture2D" uid="uid://c6x75lffdovlc" path="res://asset/creature/Character_base_frame.png" id="2_xckqh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvvwy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s0q8h")
+"texture": ExtResource("2_xckqh")
 }],
 "loop": true,
 "name": &"default",
@@ -22,8 +22,8 @@ collision_layer = 2
 script = ExtResource("1_y8hmf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 5
 position = Vector2(16, 16)
-scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_kvvwy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

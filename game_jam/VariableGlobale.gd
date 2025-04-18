@@ -1,27 +1,23 @@
 extends Node
 
-var zone_gauche := false
-var zone_droite := false
-var cpt := 1
+var left_area := false
+var right_area := false
 
 var invert_controls_left = false
 var invert_controls_right = false
 
 func reset():
-		var zone_gauche := false
-		var zone_droite := false
-		cpt +=1
+		var left_area := false
+		var right_area := false
 
-func redirection():
-	if zone_droite and zone_gauche and cpt == 1:  
-		get_tree().change_scene_to_file("res://level/scene/LevelTwo.tscn")
-		reset()
-	if zone_droite and zone_gauche and cpt == 2:  
-		get_tree().change_scene_to_file("res://level/scene/LevelThree.tscn")
-		reset()
-	if zone_droite and zone_gauche and cpt == 3:  
-		get_tree().change_scene_to_file("res://Level/scene/LevelFour.tscn")
-		reset()
-	if zone_droite and zone_gauche and cpt == 4:  
-		get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
-		reset()
+func redirection(name: String):
+	if left_area and right_area:
+		match name:
+			"LevelOne":
+				get_tree().change_scene_to_file("res://level/scene/LevelTwo.tscn")
+			"LevelTwo":
+				get_tree().change_scene_to_file("res://level/scene/LevelThree.tscn")
+			"LevelThree":
+				get_tree().change_scene_to_file("res://level/scene/LevelFour.tscn")
+			"LevelFour":
+				get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
