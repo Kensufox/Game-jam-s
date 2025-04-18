@@ -14,12 +14,11 @@ func _ready():
 
 func _physics_process(delta):
 	#velocity = Vector2(0, -SPEED).rotated(dir)
-	move_and_collide(Vector2(0, -SPEED).rotated(dir))
+	move_and_collide(Vector2(0, -SPEED).rotated(-dir))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(str(body.get_parent()))
-	if str(body.get_parent()) == "Obstacle":
-		print("test")
+	if body.name in ["LeftPlayer", "RightPlayer"]:
+		get_tree().reload_current_scene()
 
 func _on_life_timeout() -> void:
 	queue_free()

@@ -1,6 +1,7 @@
 extends Label
 
-var countdown := 13
+var countdown := 6
+#temps minimum réussit 6 secondes
 
 func _ready():
 	# Style initial
@@ -18,7 +19,7 @@ func start_timer():
 	for i in range(countdown, 0, -1):
 		set_timer_text(i)
 		await get_tree().create_timer(1.0).timeout
-	
+
 	set_timer_text(0)
 	print("cheh")
 	get_tree().reload_current_scene()
