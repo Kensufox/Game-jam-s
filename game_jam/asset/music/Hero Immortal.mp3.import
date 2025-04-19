@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://brsldcpdw27xp"
-path="res://.godot/imported/Hero Immortal.mp3-85596aa5851a74adce8d36da86c6f6bf.mp3str"
+path="res://.godot/imported/Hero Immortal.mp3-47954d1608cd71d5daa19498287d0058.mp3str"
 
 [deps]
 
-source_file="res://Asset/Music/Hero Immortal.mp3"
-dest_files=["res://.godot/imported/Hero Immortal.mp3-85596aa5851a74adce8d36da86c6f6bf.mp3str"]
+source_file="res://Asset/music/Hero Immortal.mp3"
+dest_files=["res://.godot/imported/Hero Immortal.mp3-47954d1608cd71d5daa19498287d0058.mp3str"]
 
 [params]
 

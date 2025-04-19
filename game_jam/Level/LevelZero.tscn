@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bq1slpwadh3ce" path="res://Level/Level.gd" id="1_c7cia"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
-[ext_resource type="PackedScene" uid="uid://cpnc3aspkn8lg" path="res://MainMenu/Wall.tscn" id="2_yo0wg"]
+[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/Wall.tscn" id="2_yo0wg"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
-[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/RestartZone.tscn" id="3_b5i5v"]
-[ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://Asset/map/border_water_grass_tileset.png" id="7_djje8"]
+[ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
+[ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://Asset/Map/border_water_grass_tileset.png" id="7_djje8"]
 [ext_resource type="PackedScene" uid="uid://bnme85qr1e6kd" path="res://Level/Scene/Canon.tscn" id="8_2rn7e"]
-[ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://Asset/map/border_lava_rock_tileset.png" id="8_6w2bw"]
+[ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://Asset/Map/border_lava_rock_tileset.png" id="8_6w2bw"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="9_c7cia"]
-[ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://Asset/map/rock_texture_64x32.png" id="9_cj30g"]
-[ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://Asset/map/wall_border_tileset.png" id="10_kb657"]
+[ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://Asset/Map/rock_texture_64x32.png" id="9_cj30g"]
+[ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://Asset/Map/wall_border_tileset.png" id="10_kb657"]
 
 [sub_resource type="Gradient" id="Gradient_1n1mg"]
 
