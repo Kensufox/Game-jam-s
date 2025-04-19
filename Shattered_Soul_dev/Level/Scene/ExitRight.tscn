@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4gsaevd3rgpl"]
+
+[ext_resource type="Script" uid="uid://by2beeenqeecr" path="res://Level/Scripts/End_level.gd" id="1_v8lkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvxdl"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_wjytx"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n1pgi"]
+gradient = SubResource("Gradient_wjytx")
+
+[node name="ExitRight" type="Node2D"]
+
+[node name="AreaB" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("1_v8lkn")
+
+[node name="RightExit" type="CollisionShape2D" parent="AreaB"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_bvxdl")
+
+[node name="Sprite2D" type="Sprite2D" parent="AreaB"]
+position = Vector2(16, 16)
+texture = SubResource("GradientTexture2D_n1pgi")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[connection signal="body_entered" from="AreaB" to="AreaB" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaB" to="AreaB" method="_on_body_exited"]
