@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://Asset/Map/wall_border_tileset.png" id="10_3bmi2"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="11_4gwu0"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="12_2kr5v"]
-[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/Wall.tscn" id="13_kchjd"]
+[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/wall.tscn" id="13_kchjd"]
 [ext_resource type="PackedScene" uid="uid://bnme85qr1e6kd" path="res://Level/Scene/Canon.tscn" id="14_6fkhl"]
 [ext_resource type="Script" uid="uid://n81r4x4qpt24" path="res://Level/Scripts/RestartZone.gd" id="14_bf38g"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="14_kkwx8"]

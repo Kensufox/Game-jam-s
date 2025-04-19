@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://Asset/Map/border_water_grass_tileset.png" id="7_nr2uk"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://Asset/Map/border_lava_rock_tileset.png" id="8_3w42o"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://Asset/Map/rock_texture_64x32.png" id="9_rn601"]
-[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/Wall.tscn" id="9_ycqr8"]
+[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/wall.tscn" id="9_ycqr8"]
 [ext_resource type="Texture2D" uid="uid://b4ufy14b2eaj0" path="res://Asset/Map/wall_border_tileset.png" id="10_2dw7j"]
 [ext_resource type="Texture2D" uid="uid://bc1vi5v5rm4ao" path="res://Asset/Element/blank_button_32x32.png" id="11_ow6w0"]
 [ext_resource type="Texture2D" uid="uid://cqq5cjggejif0" path="res://Asset/Element/wood_bridge_ghost_32x32.png" id="12_nxsv8"]

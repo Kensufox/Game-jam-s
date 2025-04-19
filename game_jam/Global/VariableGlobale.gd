@@ -6,10 +6,10 @@ var invert_controls_left = false
 var invert_controls_right = false
 
 func reset():
-		var left_area := false
-		var right_area := false
-		var invert_controls_left = false
-		var invert_controls_right = false
+		left_area = false
+		right_area = false
+		invert_controls_left = false
+		invert_controls_right = false
 
 func redirection(name: String):
 	if left_area and right_area:
@@ -24,5 +24,7 @@ func redirection(name: String):
 				get_tree().change_scene_to_file("res://Level/scene/LevelFour.tscn")
 				reset()
 			"LevelFour":
-				get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
+				get_tree().change_scene_to_file("res://Level/Scene/EndScreen.tscn")
+				GlobalTimer.stop_timer()
+				MusicPlayer.stop_music_level()
 				reset()

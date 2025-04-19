@@ -3,20 +3,20 @@
 [ext_resource type="Script" uid="uid://bpeekdl03wgcd" path="res://MainMenu/LevelsButton.gd" id="1_otibh"]
 [ext_resource type="Script" uid="uid://1qx8qa75io66" path="res://MainMenu/QuitButton.gd" id="2_cruaa"]
 
-[sub_resource type="Gradient" id="Gradient_mlc1t"]
+[sub_resource type="Gradient" id="Gradient_cruaa"]
 colors = PackedColorArray(0.380392, 0.670588, 0.713726, 1, 0.380392, 0.670588, 0.713726, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_otibh"]
-gradient = SubResource("Gradient_mlc1t")
+gradient = SubResource("Gradient_cruaa")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlc1t"]
 font_size = 60
 
-[sub_resource type="Gradient" id="Gradient_otibh"]
+[sub_resource type="Gradient" id="Gradient_b76km"]
 colors = PackedColorArray(0.559523, 8.90419e-07, 3.36915e-07, 1, 0.560784, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cruaa"]
-gradient = SubResource("Gradient_otibh")
+gradient = SubResource("Gradient_b76km")
 
 [sub_resource type="LabelSettings" id="LabelSettings_otibh"]
 font_size = 45

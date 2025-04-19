@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_fksmy"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="2_5m3tn"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_5m3tn"]
-[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/Wall.tscn" id="5_rxcfj"]
+[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/wall.tscn" id="5_rxcfj"]
 [ext_resource type="Texture2D" uid="uid://c3lunweow8nho" path="res://Asset/Map/border_water_grass_tileset.png" id="7_tyjj6"]
 [ext_resource type="Texture2D" uid="uid://2lqqscfee2l5" path="res://Asset/Map/border_lava_rock_tileset.png" id="8_ufba0"]
 [ext_resource type="Texture2D" uid="uid://48635gd3v7oy" path="res://Asset/Map/rock_texture_64x32.png" id="9_chxv4"]

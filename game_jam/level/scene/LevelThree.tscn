@@ -1,10 +1,10 @@
 [gd_scene load_steps=22 format=4 uid="uid://cif038n6buer6"]
 
-[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://Level/Scripts/timer.gd" id="1_mxo8o"]
+[ext_resource type="Script" uid="uid://bmg7dqcf3bklp" path="res://Level/Scripts/LevelTimer.gd" id="1_mxo8o"]
 [ext_resource type="PackedScene" uid="uid://c4gsaevd3rgpl" path="res://Level/Scene/ExitRight.tscn" id="1_ql7ep"]
 [ext_resource type="Script" uid="uid://bq1slpwadh3ce" path="res://Level/Level.gd" id="1_ufymu"]
 [ext_resource type="PackedScene" uid="uid://cdttl1i47orm" path="res://Perso/Scene/PlayerOne.tscn" id="1_yupli"]
-[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/Wall.tscn" id="2_yo0wg"]
+[ext_resource type="PackedScene" uid="uid://i60jv43xkhgc" path="res://MainMenu/wall.tscn" id="2_yo0wg"]
 [ext_resource type="PackedScene" uid="uid://umf6q46ffc8d" path="res://Level/Scene/ExitLeft.tscn" id="2_yol54"]
 [ext_resource type="PackedScene" uid="uid://f8ejf6qmovu8" path="res://Level/Scene/restartZone.tscn" id="3_b5i5v"]
 [ext_resource type="PackedScene" uid="uid://qt436w7eyq8m" path="res://Perso/Scene/PlayerTwo.tscn" id="6_6tuhd"]

@@ -19,3 +19,4 @@ config/icon="res://icon.svg"
 
 VariableGlobale="*res://Global/VariableGlobale.gd"
 MusicPlayer="*res://Global/MusicPlayer.tscn"
+GlobalTimer="*res://Global/Timer.gd"
