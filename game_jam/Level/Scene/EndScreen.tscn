@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cohop2uholbo7"]
+[gd_scene load_steps=11 format=3 uid="uid://cohop2uholbo7"]
 
 [ext_resource type="Script" uid="uid://bpeekdl03wgcd" path="res://MainMenu/LevelsButton.gd" id="1_6xfmu"]
 [ext_resource type="Script" uid="uid://c46u1grurlpfo" path="res://Level/Scene/TimeText.gd" id="1_f7e5i"]
 [ext_resource type="Script" uid="uid://cknu71u7q5amq" path="res://Level/Scripts/MenuButton.gd" id="2_f7e5i"]
-[ext_resource type="Script" uid="uid://1qx8qa75io66" path="res://MainMenu/QuitButton.gd" id="2_jwqls"]
 
 [sub_resource type="Gradient" id="Gradient_mlc1t"]
 colors = PackedColorArray(0.342467, 0.403281, 0.642749, 1, 0.341176, 0.403922, 0.643137, 1)
@@ -35,51 +34,66 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1149.0
 offset_bottom = 647.0
 texture = SubResource("GradientTexture2D_f7e5i")
 
 [node name="Congrats" type="Label" parent="."]
-offset_left = 368.0
-offset_top = 80.0
-offset_right = 803.0
-offset_bottom = 163.0
+layout_mode = 0
+offset_left = 360.0
+offset_top = 40.0
+offset_right = 795.0
+offset_bottom = 123.0
 text = "Congratulation"
 label_settings = SubResource("LabelSettings_kp4nw")
 
 [node name="Finish" type="Label" parent="."]
-offset_left = 416.0
-offset_top = 168.0
-offset_right = 744.0
-offset_bottom = 210.0
+layout_mode = 0
+offset_left = 408.0
+offset_top = 120.0
+offset_right = 736.0
+offset_bottom = 162.0
 text = "you finish the game in:"
 label_settings = SubResource("LabelSettings_tntn4")
 
 [node name="Time" type="Label" parent="."]
-offset_left = 536.0
-offset_top = 232.0
-offset_right = 613.0
-offset_bottom = 274.0
+layout_mode = 0
+offset_left = 528.0
+offset_top = 168.0
+offset_right = 605.0
+offset_bottom = 210.0
 text = "00:00"
 label_settings = SubResource("LabelSettings_tntn4")
 script = ExtResource("1_f7e5i")
 
+[node name="Thanks" type="Label" parent="."]
+offset_left = 408.0
+offset_top = 272.0
+offset_right = 736.0
+offset_bottom = 359.0
+text = "Thank you for playing
+      Hope you enjoy"
+label_settings = SubResource("LabelSettings_tntn4")
+
 [node name="Levels" type="TextureRect" parent="."]
-offset_left = 472.0
-offset_top = 344.0
-offset_right = 680.0
-offset_bottom = 408.0
+layout_mode = 0
+offset_left = 432.0
+offset_top = 408.0
+offset_right = 720.0
+offset_bottom = 472.0
 texture = SubResource("GradientTexture2D_o8qid")
 
 [node name="LevelsButton" type="TextureButton" parent="Levels"]
 layout_mode = 0
-offset_right = 209.0
+offset_right = 288.0
 offset_bottom = 63.0
 script = ExtResource("1_6xfmu")
 
 [node name="LevelsText" type="Label" parent="Levels/LevelsButton"]
 layout_mode = 0
-offset_right = 208.0
+offset_left = 40.0
+offset_right = 248.0
 offset_bottom = 65.0
 text = "Restart"
 label_settings = SubResource("LabelSettings_c5ejl")
@@ -87,45 +101,25 @@ horizontal_alignment = 1
 vertical_alignment = 3
 
 [node name="Settings" type="TextureRect" parent="."]
-offset_left = 448.0
-offset_top = 440.0
-offset_right = 704.0
-offset_bottom = 504.0
+layout_mode = 0
+offset_left = 432.0
+offset_top = 504.0
+offset_right = 720.0
+offset_bottom = 568.0
 texture = SubResource("GradientTexture2D_o8qid")
 
 [node name="SettingsButton" type="TextureButton" parent="Settings"]
 layout_mode = 0
-offset_right = 256.0
+offset_right = 288.0
 offset_bottom = 63.0
 script = ExtResource("2_f7e5i")
 
 [node name="SettingsText" type="Label" parent="Settings/SettingsButton"]
 layout_mode = 0
-offset_right = 256.0
+offset_left = 16.0
+offset_right = 272.0
 offset_bottom = 65.0
 text = "Main Menu"
-label_settings = SubResource("LabelSettings_c5ejl")
-horizontal_alignment = 1
-vertical_alignment = 3
-
-[node name="Quit" type="TextureRect" parent="."]
-offset_left = 472.0
-offset_top = 536.0
-offset_right = 680.0
-offset_bottom = 600.0
-texture = SubResource("GradientTexture2D_o8qid")
-
-[node name="QuitButton" type="TextureButton" parent="Quit"]
-layout_mode = 0
-offset_right = 209.0
-offset_bottom = 63.0
-script = ExtResource("2_jwqls")
-
-[node name="QuitText" type="Label" parent="Quit/QuitButton"]
-layout_mode = 0
-offset_right = 208.0
-offset_bottom = 65.0
-text = "Quit"
 label_settings = SubResource("LabelSettings_c5ejl")
 horizontal_alignment = 1
 vertical_alignment = 3
